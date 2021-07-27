@@ -85,9 +85,13 @@ function Product() {
           required
           >
             <option>Select Category</option>
-            <option value="IPA">IPA</option>
-            <option value="Larger">Larger</option>
-            <option value="Pilsen">Pilsen</option>
+            <option value="leve">leve</option>
+            <option value="Maltadas">Maltadas</option>
+            <option value="Lupuladas">Lupuladas</option>
+            <option value="Torradas">Torradas</option>
+            <option value="Frutadas">Frutadas</option>
+            <option value="Sem Alccol">Sem Alccol</option>
+            <option value="Sem Glutem">Sem Glutem</option>
           </select>
       </div>
     </div>
@@ -104,9 +108,11 @@ function Product() {
           required
           >
             <option>Select Size</option>
-            <option value="350ml">350ml</option>
-            <option value="600ml">600ml</option>
-            <option value="1l">1l</option>
+            <option value="310">310</option>
+            <option value="330">330</option>
+            <option value="355">355</option>
+            <option value="500">500</option>
+            <option value="600">600</option>
           </select>
       </div>
     </div>
