@@ -54,7 +54,7 @@ function Login(props) {
         />
 
         <TextInput
-          label="Senha"
+          label="Password"
           type="password"
           name="password"
           id="signupFormPassword"
@@ -66,12 +66,12 @@ function Login(props) {
 
         <div className="form-group">
           <button className="btn btn-primary" type="submit">
-            Entrar
+           Login
           </button>
         </div>
 
         <Link className="pb-3" to="/auth/signup">
-          Ainda não é cadastrado? Clique aqui para se cadastrar!
+        Not registered? Click here to register!
         </Link>
       </form>
     </div>
