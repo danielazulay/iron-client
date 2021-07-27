@@ -93,7 +93,7 @@ function Signup() {
         required
       />
 
-      <h3 className="mb-3">Eddress</h3>
+      <h3 className="mb-3">Address</h3>
       <TextInput
         label="Street"
         id="street"

@@ -42,14 +42,14 @@ function Profile() {
       <TextProfile label="Document" name={state.document} />
       <TextProfile label="Phone Number" name={state.phoneNumber} />
 
-      <h2 className="mb-4 mt-4">Eddress</h2>
+      <h2 className="mb-4 mt-4">Address</h2>
 
-      <TextProfile label="Street" name={state.street} />
-      <TextProfile label="Number" name={state.number} />
-      <TextProfile label="City" name={state.city} />
-      <TextProfile label="State" name={state.district} />
-      <TextProfile label="Neighbourhood" name={state.neighbourhood} />
-      <TextProfile label="Postal Code" name={state.postalCode} />
+      <TextProfile label="Street" name={state.address.street} />
+      <TextProfile label="Number" name={state.address.number} />
+      <TextProfile label="City" name={state.address.city} />
+      <TextProfile label="State" name={state.address.district} />
+      <TextProfile label="Neighbourhood" name={state.address.neighbourhood} />
+      <TextProfile label="Postal Code" name={state.address.postalCode} />
       
     </div>
   );
