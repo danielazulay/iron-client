@@ -3,30 +3,36 @@ import api from "../apis/api";
 import CardProducts from "../components/CardProducts";
 
 function AllProduct() {
-  const [state, setState] = useState({
-    name: "",
-  });
+  const [state, setState] = useState([]);
 
   useEffect(() => {
-    async function FetchProduct() {
+    async function fetchProduct() {
       try {
         const response = await api.get("/getAllProducts");
         console.log(response.data);
         
-        setState({ ...response.data[0] })
+        setState( [...response.data] )
 
       } catch (err) {
         console.log(err);
       }
     }
-    FetchProduct();
+    fetchProduct();
   }, []);
 
 
   return ( 
     <div>
 
-<h1>{state.name}</h1>
+{ state.map((elem) => {
+  return(
+    <CardProducts
+    name={elem.name}
+    size={elem.size}
+    description={elem.description}
+    />
+  )
+}) }
 
     </div>
   );
