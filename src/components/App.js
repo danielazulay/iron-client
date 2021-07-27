@@ -7,7 +7,7 @@ import { AuthContextComponent } from "../contexts/authContext";
 
 import Signup from "../routerComponents/auth/Signup";
 import Login from "../routerComponents/auth/Login";
-import newProduct from "../components/newProduct";
+import Product from "./Product";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <div className="container mt-5">
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path="/newProduct" component={newProduct} />
+            <Route path="/Product" component={Product} />
           </div>
           
 

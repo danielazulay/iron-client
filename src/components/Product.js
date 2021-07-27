@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import api from "../apis/api";
-import TextInput from "../components/TextInput";
+import TextInput from "./TextInput";
 
-function Signup() {
+function Product() {
   const [state, setState] = useState({
     name: "",
     validity: "",
@@ -123,4 +123,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Product;
