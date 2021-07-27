@@ -6,25 +6,29 @@ import { AuthContextComponent } from "../contexts/authContext";
 
 
 import Signup from "../routerComponents/auth/Signup";
+import Profile from "../routerComponents/auth/Profile";
 import Login from "../routerComponents/auth/Login";
 import Product from "./Product";
+import AllProduct from "../Products/AllProducts";
+
 
 function App() {
   return (
     <BrowserRouter>
+    <AuthContextComponent>
       <Switch>
-        <AuthContextComponent>
-
 
           <div className="container mt-5">
             <Route path="/signup" component={Signup} />
+            <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
             <Route path="/newProduct" component={Product} />
-          </div>
           
-
-        </AuthContextComponent>
+            <Route path="/getAllProducts" component={AllProduct} />
+          </div>
+        
       </Switch>
+      </AuthContextComponent>
     </BrowserRouter>
   );
 }
