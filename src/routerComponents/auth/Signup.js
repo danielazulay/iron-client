@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import api from "../../apis/api";
-import TextInput from "../../apis/components/TextInput";
+import TextInput from "../../components/TextInput";
 
 function Signup() {
   const [state, setState] = useState({
@@ -166,16 +166,23 @@ function Signup() {
         name="phoneNumber"
         required={false}
       />
-      <TextInput
-        label="Role"
-        id="role"
-        type="text"
-        value={state.role}
-        onChange={handleChange}
-        name="role"
-        required
-      />
-
+       <div>
+      <label htmlFor="role">Role</label>
+      <div className="input-group mb-3">
+        <select
+         label="Role"
+         id="role"
+         value={state.role}
+         onChange={handleChange}
+         name="role"
+         required
+          className="form-control"
+          >
+            <option value="ADMIN">Admin</option>
+            <option value="USER" selected>User</option>
+          </select>
+      </div>
+    </div>
       <div className="form-group">
         <button className="btn btn-primary" type="submit">
           Save
