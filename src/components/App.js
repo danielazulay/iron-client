@@ -19,7 +19,7 @@ function App() {
           <div className="container mt-5">
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path="/Product" component={Product} />
+            <Route path="/newProduct" component={Product} />
           </div>
           
 
