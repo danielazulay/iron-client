@@ -24,7 +24,6 @@ function Login(props) {
 
     try {
       const response = await api.post("/login", state);
-      console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(
@@ -54,7 +53,7 @@ function Login(props) {
         />
 
         <TextInput
-          label="Password"
+          label="Senha"
           type="password"
           name="password"
           id="signupFormPassword"
@@ -66,12 +65,12 @@ function Login(props) {
 
         <div className="form-group">
           <button className="btn btn-primary" type="submit">
-           Login
+            Entrar
           </button>
         </div>
 
         <Link className="pb-3" to="/auth/signup">
-        Not registered? Click here to register!
+          Ainda não é cadastrado? Clique aqui para se cadastrar!
         </Link>
       </form>
     </div>
