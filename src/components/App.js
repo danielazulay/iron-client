@@ -13,6 +13,8 @@ import AllProduct from "../Products/AllProducts";
 import ResultSearch from "../components/ResultSearch"
 import RouterSearch from "../components/RouterSearch"
 import NaveBar from "../components/NaveBar"
+import ProductDetails from "../Products/ProductDetail";
+
 
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
   
           
             <Route path="/getAllProducts" component={AllProduct} />
+            <Route path="/productDetails/:id" component={ProductDetails} />
           </div>
         
 
