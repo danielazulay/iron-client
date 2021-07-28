@@ -10,9 +10,9 @@ function AllProduct() {
       try {
         const response = await api.get("/getAllProducts");
         console.log(response.data);
+        console.log(response.data._id);
         
         setState( [...response.data] )
-
       } catch (err) {
         console.log(err);
       }
@@ -27,6 +27,7 @@ function AllProduct() {
 { state.map((elem) => {
   return(
     <CardProducts
+    key={elem.name}
     name={elem.name}
     size={elem.size}
     description={elem.description}

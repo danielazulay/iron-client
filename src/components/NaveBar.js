@@ -13,10 +13,10 @@ function NavBar() {
   <Container>
   <Navbar.Brand href="/">Home</Navbar.Brand>
   <div className="d-flex justify-content-end">
-    <Navbar.Brand href="/"  >  <i class="fas fa-shopping-cart"></i></Navbar.Brand>
+    <Navbar.Brand href="/"  >  <i className="fas fa-shopping-cart"></i></Navbar.Brand>
   
 <div>
-    <NavDropdown title={<i class="fas fa-shopping-cart"></i>} id="navbarScrollingDropdown">
+    <NavDropdown title={<i className="fas fa-shopping-cart"></i>} id="navbarScrollingDropdown">
         <NavDropdown.Item href="/login">Login</NavDropdown.Item>
         <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
         <NavDropdown.Divider />

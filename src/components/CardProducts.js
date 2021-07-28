@@ -16,6 +16,7 @@ function CardProducts(props) {
             <p className="card-text">
               <small className="text-muted">{props.size}</small>
             </p>
+            <p>{props.id}</p>
           </div>
         </div>
       </div>
