@@ -26,7 +26,7 @@ function ResultSearch(props) {
         }
     }
     fetchProfile();
-  }, []);
+  }, [name]);
     
 
     return (
