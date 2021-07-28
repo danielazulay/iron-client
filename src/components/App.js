@@ -10,16 +10,21 @@ import Profile from "../routerComponents/auth/Profile";
 import Login from "../routerComponents/auth/Login";
 import Product from "./Product";
 import AllProduct from "../Products/AllProducts";
-
+import ResultSearch from "../components/ResultSearch"
+import RouterSearch from "../components/RouterSearch"
+import NaveBar from "../components/NaveBar"
 
 
 function App() {
   return (
     <BrowserRouter>
+        <Switch>
     <AuthContextComponent>
-      <Switch>
-
+  
+      <NaveBar/>
+      <RouterSearch/>
           <div className="container mt-5">
+          <Route path="/result-search/:name" component={ResultSearch} />
             <Route path="/signup" component={Signup} />
             <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
@@ -29,8 +34,9 @@ function App() {
             <Route path="/getAllProducts" component={AllProduct} />
           </div>
         
-      </Switch>
+
       </AuthContextComponent>
+      </Switch>
     </BrowserRouter>
   );
 }
