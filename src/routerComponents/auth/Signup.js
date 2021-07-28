@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import api from "../../apis/api";
 import TextInput from "../../components/TextInput";
 
-function Signup() {
+function Signup(props) {
   const [state, setState] = useState({
     name: "",
     email: "",
@@ -28,7 +28,7 @@ function Signup() {
   }
 
   async function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(props);
 
     try {
       const { street, neighbourhood, city, district, postalCode, number } = state;
@@ -44,7 +44,7 @@ function Signup() {
           number,
         },
       });
-
+      props.history.push("/login");
       console.log(response);
     } catch (err) {
       console.log(err.response);
