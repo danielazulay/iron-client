@@ -1,12 +1,10 @@
 import "./App.css";
 
+import Nav from "react-bootstrap/Nav";
 
-
-import Nav from 'react-bootstrap/Nav'
-
-import Container from 'react-bootstrap/Container'
-import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar() {
 
