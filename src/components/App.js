@@ -22,8 +22,10 @@ function App() {
     <AuthContextComponent>
   
       <NaveBar/>
-      <RouterSearch/>
+   
+      <Route component={RouterSearch} />
           <div className="container mt-5">
+      
           <Route path="/result-search/:name" component={ResultSearch} />
             <Route path="/signup" component={Signup} />
             <Route path="/profile" component={Profile} />
