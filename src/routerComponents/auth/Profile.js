@@ -42,7 +42,7 @@ function Profile() {
       <TextProfile label="Document" name={state.document} />
       <TextProfile label="Phone Number" name={state.phoneNumber} />
 
-      <h2 className="mb-4 mt-4">Eddress</h2>
+      <h2 className="mb-4 mt-4">Address</h2>
 
       <TextProfile label="Street" name={state.address.street} />
       <TextProfile label="Number" name={state.address.number} />
