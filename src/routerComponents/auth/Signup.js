@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import api from "../../apis/api";
-import TextInput from "../../componentes/TextInput";
+import TextInput from "../../components/TextInput";
 
 function Signup() {
   const [state, setState] = useState({
@@ -44,6 +44,7 @@ function Signup() {
           number,
         },
       });
+
       console.log(response);
     } catch (err) {
       console.log(err.response);
@@ -179,7 +180,7 @@ function Signup() {
           className="form-control"
           >
             <option value="ADMIN">Admin</option>
-            <option value="USER" selected>User</option>
+            <option value="USER" defaultValue>User</option>
           </select>
       </div>
     </div>
