@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import api from "../../apis/api";
-import TextInput from "../../apis/components/TextInput";
+import TextInput from "../../componentes/TextInput";
 
 function Signup() {
   const [state, setState] = useState({

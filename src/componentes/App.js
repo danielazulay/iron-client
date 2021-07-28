@@ -8,7 +8,7 @@ import ResultSearch from "./ResultSearch"
 import RouterSearch from "./RouterSearch"
 import NaveBar from "./NaveBar"
 //import Cards from "./cards"
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+
 
 import Signup from "../routerComponents/auth/Signup";
 
