@@ -13,6 +13,9 @@ function ResultSearch(props) {
   useEffect(() => {
     async function fetchProfile() {
       try {
+
+        
+
         const response = await api.get(`/search?name=${name}`);
 
         setState([...response.data]);
@@ -25,6 +28,8 @@ function ResultSearch(props) {
 
   return (
     <div>
+
+
       {state.map((elem) => {
         return (
           <Link  to={`/productDetails/${elem._id}`} className="allProduct card mb-3" style={{ maxWidth: "540px" }}>
