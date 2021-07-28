@@ -10,9 +10,8 @@ function AllProduct() {
       try {
         const response = await api.get("/getAllProducts");
         console.log(response.data);
-        
-        setState( [...response.data] )
 
+        setState([...response.data]);
       } catch (err) {
         console.log(err);
       }
@@ -20,20 +19,17 @@ function AllProduct() {
     fetchProduct();
   }, []);
 
-
-  return ( 
+  return (
     <div>
-
-{ state.map((elem) => {
-  return(
-    <CardProducts
-    name={elem.name}
-    size={elem.size}
-    description={elem.description}
-    />
-  )
-}) }
-
+      {state.map((elem) => {
+        return (
+          <CardProducts
+            name={elem.name}
+            size={elem.size}
+            description={elem.description}
+          />
+        );
+      })}
     </div>
   );
 }
