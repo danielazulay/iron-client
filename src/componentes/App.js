@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { AuthContextComponent } from "../../contexts/authContext";
+import { AuthContextComponent } from "../contexts/authContext";
 // import ProtectedRoute from "../../routerComponents/auth/PrivateRouter";
 import ResultSearch from "./ResultSearch"
 import RouterSearch from "./RouterSearch"
@@ -10,7 +10,7 @@ import NaveBar from "./NaveBar"
 //import Cards from "./cards"
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
-import Signup from "../../routerComponents/auth/Signup";
+import Signup from "../routerComponents/auth/Signup";
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import "./App.css";
 import { useEffect } from "react";
 import {  useParams } from "react-router-dom";
 
-import api from "../api";
+import api from "../apis/api";
 
 
 function ResultSearch(props) {
