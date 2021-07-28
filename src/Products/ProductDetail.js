@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../apis/api";
 import { useParams } from "react-router-dom";
 import CardProducts from "../components/CardProducts";
-
+import { Link } from 'react-router-dom'
 function ProductDetails() {
   const [state, setState] = useState({
     name: "",
@@ -15,7 +15,7 @@ function ProductDetails() {
     async function fetchDetails() {
       try {
         const response = await api.get(`/productDetails/${id}`);
-
+console.log(response)
         setState({ ...response.data });
       } catch (err) {
         console.log(err);
