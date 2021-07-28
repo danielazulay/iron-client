@@ -18,9 +18,10 @@ function App() {
     <BrowserRouter>
       <Switch>
         <AuthContextComponent>
-          <div className="container mt-5">
+        
+          <div className="container mt-3">
             <NaveBar />
-            <RouterSearch />
+            <Route component={RouterSearch} />
             <Route path="/result-search/:name" component={ResultSearch} />
             <Route path="/signup" component={Signup} />
             <Route path="/profile" component={Profile} />
