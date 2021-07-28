@@ -6,7 +6,7 @@ function Search(props) {
 
   return (
     <div>
-      <nav className="navbar navbar-light bg-light">
+      <nav className="navbar navbar-light bg-light mb-3">
         <div className="container-fluid">
           <form className="d-flex">
             <input

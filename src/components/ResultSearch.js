@@ -13,6 +13,9 @@ function ResultSearch(props) {
   useEffect(() => {
     async function fetchProfile() {
       try {
+
+        
+
         const response = await api.get(`/search?name=${name}`);
 
         setState([...response.data]);
@@ -25,6 +28,8 @@ function ResultSearch(props) {
 
   return (
     <div>
+
+
       {state.map((elem) => {
         return (
           <CardProducts
