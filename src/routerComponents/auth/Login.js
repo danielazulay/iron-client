@@ -31,7 +31,7 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setError(null);
-      props.history.push("/profile");
+      props.history.push("/");
     } catch (err) {
       console.error(err.response);
       setError(err.response.data.error);
