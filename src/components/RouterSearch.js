@@ -2,13 +2,14 @@ import "./App.css";
 
 import React, { useState } from "react";
 
-/* import api from "../api"; */
+
 import Search from "./Search"
 
 function RouterSearch(props) {
-    const [products, setSearch] = useState({name:""});
-  
 
+
+    const [products, setSearch] = useState({name:""});
+ 
 
 
     function handleChange(event) {
@@ -18,25 +19,20 @@ function RouterSearch(props) {
         })
       }
 
-/*     async function handleSubmit(event) {
-      event.preventDefault();
-        try {
-
-
-          const response = await api.get(`/search?name=${products.product}`);
-   
-          console.log(response)
-     
-        } catch (err) {
-          console.error(err.response);
-        }
-      } */
     
   
     return (
         <div>
+<<<<<<< HEAD
+        { props.location.pathname==="/login"|| props.location.pathname==="/signup" || props.location.pathname==="/profile"? null:<Search handleChange={handleChange}   products={products}  />    }
+=======
+>>>>>>> c2bc5ca5d3d3721e41c999e0bcce5de8388db818
 
-<Search handleChange={handleChange}   products={products}  />
+      
+
+        { props.location.pathname==="/login"|| props.location.pathname==="/signup" ? null : <Search handleChange={handleChange} products={products} /> }
+
+        
 
 </div>
 

@@ -1,44 +1,48 @@
 import "./App.css";
-import { useEffect } from "react";
-import {  useParams } from "react-router-dom";
-
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import CardProducts from "./CardProducts";
 import api from "../apis/api";
-
-
+import { Link } from 'react-router-dom'
 function ResultSearch(props) {
 
-    
+  const [state, setState] = useState([]);
 
-    const { name } = useParams();
+  const { name } = useParams();
 
+  useEffect(() => {
+    async function fetchProfile() {
+      try {
 
+        
 
-    useEffect(() => {
-        async function fetchProfile() {
-        try {
+        const response = await api.get(`/search?name=${name}`);
 
-          const response =  await api.get(`/search?name=${name}`);
-   console.log(response)
-        /*   setSearch({ ...response.data }); */
-
-        } catch (err) {
-          console.error(err.response);
-        }
+        setState([...response.data]);
+      } catch (err) {
+        console.error(err.response);
+      }
     }
     fetchProfile();
   }, [name]);
-    
 
-    return (
-        <div>
-
+  return (
+    <div>
 
 
+      {state.map((elem) => {
+        return (
+          <Link  to={`/productDetails/${elem._id}`} className="allProduct card mb-3" style={{ maxWidth: "540px" }}>
+          <CardProducts
+            name={elem.name}
+            size={elem.size}
+            description={elem.description}
+          />
+                    </Link>
+        );
+      })}
+    </div>
+  );
+}
 
-</div>
-
-    )
-  }
-
-
-export default ResultSearch
+export default ResultSearch;
