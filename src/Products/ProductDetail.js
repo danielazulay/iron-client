@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import api from "../apis/api";
 import { useParams } from "react-router-dom";
 import CardProducts from "../components/CardProducts";
-import { Link } from 'react-router-dom'
+
+
 function ProductDetails() {
   const [state, setState] = useState({
     name: "",
@@ -31,6 +32,7 @@ console.log(response)
         description={state.description}
         size={state.size}
       />
+<button type="button" class="btn btn-secondary">Add</button>
     </div>
   );
 }
