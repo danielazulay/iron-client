@@ -12,6 +12,7 @@ import Product from "./Product";
 import AllProduct from "../Products/AllProducts";
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
             <Route path="/newProduct" component={Product} />
+  
           
             <Route path="/getAllProducts" component={AllProduct} />
           </div>

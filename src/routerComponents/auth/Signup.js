@@ -180,7 +180,7 @@ function Signup() {
           className="form-control"
           >
             <option value="ADMIN">Admin</option>
-            <option value="USER" defaultValue>User</option>
+            <option value="USER">User</option>
           </select>
       </div>
     </div>

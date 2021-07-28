@@ -90,7 +90,7 @@ function Product() {
             <option value="Lupuladas">Lupuladas</option>
             <option value="Torradas">Torradas</option>
             <option value="Frutadas">Frutadas</option>
-            <option value="Sem Alccol">Sem Alccol</option>
+            <option value="Sem Alcool">Sem Alcool</option>
             <option value="Sem Glutem">Sem Glutem</option>
           </select>
       </div>
@@ -116,6 +116,15 @@ function Product() {
           </select>
       </div>
     </div>
+    <TextInput
+        label="Price"
+        id="price"
+        type="number"
+        value={state.price}
+        onChange={handleChange}
+        name="price"
+        required
+      />
       <div className="form-group">
       <form action="/action_page.php">
     <label for="img">Select image:</label>
