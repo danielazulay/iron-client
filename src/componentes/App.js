@@ -22,7 +22,7 @@ function App() {
 <RouterSearch/>
 
           <div className="container mt-5">
-          <Route path="/search/:name" component={ResultSearch} />
+          <Route path="/result-search/:name" component={ResultSearch} />
             <Route path="/signup" component={Signup} />
           </div>
 

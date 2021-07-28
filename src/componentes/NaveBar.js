@@ -20,7 +20,7 @@ function NavBar() {
     <Navbar.Brand href="/"  >  <i class="fas fa-shopping-cart"></i></Navbar.Brand>
   
 <div>
-    <NavDropdown title="Menu" id="navbarScrollingDropdown">
+    <NavDropdown title={<i class="fas fa-shopping-cart"></i>} id="navbarScrollingDropdown">
         <NavDropdown.Item href="/login">Login</NavDropdown.Item>
         <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
         <NavDropdown.Divider />
