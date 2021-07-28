@@ -23,7 +23,7 @@ console.log(response)
       }
     }
     fetchDetails();
-  }, []);
+  }, [id]);
 
   return (
     <div>
@@ -32,7 +32,7 @@ console.log(response)
         description={state.description}
         size={state.size}
       />
-<button type="button" class="btn btn-secondary">Add</button>
+<button type="button" className="btn btn-secondary">Add</button>
     </div>
   );
 }
