@@ -14,7 +14,8 @@ import ResultSearch from "../components/ResultSearch"
 import RouterSearch from "../components/RouterSearch"
 import NaveBar from "../components/NaveBar"
 import ProductDetails from "../Products/ProductDetail";
-
+import EditProducts from "./EditProducts";
+import DeleteProduct from "./DeleteProduct"
 
 
 function App() {
@@ -30,11 +31,13 @@ function App() {
             <Route path="/signup" component={Signup} />
             <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
-            <Route path="/newProduct" component={Product} />
+            <Route path="/new-product" component={Product} />
   
           
-            <Route path="/getAllProducts" component={AllProduct} />
-            <Route path="/productDetails/:id" component={ProductDetails} />
+            <Route path="/all-products" component={AllProduct} />
+            <Route path="/product-details/:id" component={ProductDetails} />
+            <Route path="/edit-product/:id" component={EditProducts} />
+            <Route path="/delete-product/:id" component={DeleteProduct} />
           </div>
         
 

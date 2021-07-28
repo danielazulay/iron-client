@@ -30,7 +30,7 @@ setState({ ...response.data })
 
     }
     fetchDetails()
-}, [])
+},)
 
 return(
 
