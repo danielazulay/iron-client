@@ -32,7 +32,7 @@ function ResultSearch(props) {
 
       {state.map((elem) => {
         return (
-          <Link  to={`/productDetails/${elem._id}`} className="allProduct card mb-3" style={{ maxWidth: "540px" }}>
+          <Link  to={`/product-details/${elem._id}`} className="allProduct" style={{ maxWidth: "540px" }}>
           <CardProducts
             name={elem.name}
             size={elem.size}
