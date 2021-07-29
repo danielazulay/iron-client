@@ -93,7 +93,7 @@ function Signup(props) {
         required
       />
 
-      <h3 className="mb-3">Eddress</h3>
+      <h3 className="mb-3">Address</h3>
       <TextInput
         label="Street"
         id="street"
@@ -180,7 +180,7 @@ function Signup(props) {
           className="form-control"
           >
             <option value="ADMIN">Admin</option>
-            <option value="USER" defaultValue>User</option>
+            <option value="USER">User</option>
           </select>
       </div>
     </div>

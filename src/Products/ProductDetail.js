@@ -29,9 +29,8 @@ console.log(response)
       }
     }
     fetchDetails();
-  },[id]);
-  
-  console.log(quantity,id,cart)
+  }, [id]);
+
   return (
     <div>
       <CardProducts
