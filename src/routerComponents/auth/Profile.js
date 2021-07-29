@@ -55,6 +55,8 @@ function Profile() {
 
       <Link style={{ color: "black" }} className="far fa-edit"  to={ `/editUser/${state._id}` }></Link>
 
+      
+
     </div>
   );
 }
