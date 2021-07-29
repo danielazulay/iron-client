@@ -19,7 +19,7 @@ function DeleteAccount() {
     try {
      await api.delete(`/deleteProduct/${id}`);
 
-      history.push("/profile");
+      history.push("/");
     } catch (err) {
       console.error(err.response.data);
     }

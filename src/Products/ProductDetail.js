@@ -34,8 +34,6 @@ function ProductDetails() {
     fetchDetails();
   }, [id]);
 
-  console.log("eu sou o loggedInUser ---> ",loggedInUser.user._id);
-  console.log("eu sou o userId --->", state.userid[0])
   return (
 
 
@@ -72,7 +70,7 @@ function ProductDetails() {
       <i className="far fa-trash-alt"></i>
           </Link> : <></>}
 
-      
+          <Link type="button" to={`/edit-product/${id}`} className="btn btn-primary">Edite Product</Link>
     </div>
   );
 }

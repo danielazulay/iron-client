@@ -28,7 +28,16 @@ function Profile() {
       try {
         const response = await api.get("/profile");
         console.log("eu sou Response no Profile ---> ", response);
-        setState({ ...response.data });
+
+        const date = new Date( response.data.birthDate )
+
+
+        setState({ ...response.data,
+          birthDate: `${date.getFullYear()}-${String(
+            date.getMonth() + 1
+          ).padStart(2, "0")}-${String(date.getUTCDate()).padStart(2, "0")}`,
+        });
+
       } catch (err) {
         console.log(err);
       }
