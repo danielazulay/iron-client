@@ -11,7 +11,8 @@ function ProductDetails() {
     description: "",
     size: "",
     price: "",
-    id:""
+    id:"",
+    img:""
   });
 
   const [quantity, setQuantity] = useState(0);
@@ -39,6 +40,7 @@ console.log(cart)
         description={state.description}
         size={state.size}
         price={state.price}
+        img={state.img}
       />
       <div className="form-group d-inline-block mr-3">
           <label htmlFor="productDetailQuantity">Quantity: </label>

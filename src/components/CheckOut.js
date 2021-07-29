@@ -82,7 +82,7 @@ console.log(data)
                 <div className="col-4">
                   <img
                     className="mw-100"
-                    src={product.image_url}
+                    src={product.img}
                     alt={product.name}
                   />
                 </div>

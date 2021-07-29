@@ -36,6 +36,7 @@ function ResultSearch(props) {
             name={elem.name}
             size={elem.size}
             description={elem.description}
+            img={elem.img}
           />
                     </Link>
         );
