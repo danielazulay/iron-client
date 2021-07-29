@@ -1,20 +1,22 @@
 import React, { useEffect, useState, useContext } from "react";
 import api from "../apis/api";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import CardProducts from "../components/CardProducts";
-import { CartContext } from "../contexts/cartContext"
+import { CartContext } from "../contexts/cartContext";
+import { AuthContext } from "../contexts/authContext";
 
 
 function ProductDetails() {
   const [state, setState] = useState({
+    userid: [],
     name: "",
     description: "",
     size: "",
     price: "",
-    id:"",
-    img:""
+    id: "",
+    img: "",
   });
-
+  const { loggedInUser, logoff } = useContext(AuthContext);
   const [quantity, setQuantity] = useState(0);
   const { id } = useParams();
   const { cart, setCart } = useContext(CartContext);
@@ -23,7 +25,7 @@ function ProductDetails() {
     async function fetchDetails() {
       try {
         const response = await api.get(`/productDetails/${id}`);
-console.log(response)
+        console.log("eu sou o productDetails --> ",response);
         setState({ ...response.data });
       } catch (err) {
         console.log(err);
@@ -31,11 +33,15 @@ console.log(response)
     }
     fetchDetails();
   }, [id]);
-console.log(cart)
+
+  console.log("eu sou o loggedInUser ---> ",loggedInUser.user._id);
+  console.log("eu sou o userId --->", state.userid[0])
   return (
+
+
     <div>
       <CardProducts
-      id={state._id}
+        id={state._id}
         name={state.name}
         description={state.description}
         size={state.size}
@@ -43,21 +49,30 @@ console.log(cart)
         img={state.img}
       />
       <div className="form-group d-inline-block mr-3">
-          <label htmlFor="productDetailQuantity">Quantity: </label>
-          <input
-            type="number"
-            id="productDetailQuantity"
-            className="form-control"
-            value={quantity}
-            onChange={(event) => setQuantity(Number(event.target.value))
-           }
-          />
-            </div>
-<button type="button" className="btn btn-secondary" onClick={()=>{
+        <label htmlFor="productDetailQuantity">Quantity: </label>
+        <input
+          type="number"
+          id="productDetailQuantity"
+          className="form-control"
+          value={quantity}
+          onChange={(event) => setQuantity(Number(event.target.value))}
+        />
+      </div>
+      <button
+        type="button"
+        className="btn btn-secondary"
+        onClick={() => {
+          setCart([...cart, { qtt: quantity, productId: id }]);
+        }}
+      >
+        Add to the cart
+      </button>
 
-setCart([...cart, { qtt: quantity, productId: id}])
+{state.userid[0] === loggedInUser.user._id ? <Link to={`/delete-product/${id}`}>
+      <i className="far fa-trash-alt"></i>
+          </Link> : <></>}
 
-}}>Add to the cart</button>
+      
     </div>
   );
 }
