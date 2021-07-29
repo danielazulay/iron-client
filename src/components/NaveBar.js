@@ -61,17 +61,9 @@ function NavBar() {
               <></>
             )}
 
-            {loggedInUser.user._id ? (
-              <Link to="/new-product">
-                {" "}
-                <NavDropdown.Item>new Product</NavDropdown.Item>
-              </Link>
-            ) : (
-              <></>
-            )}
 
             {loggedInUser.user._id ? (
-              <Link to="/new-product">   <NavDropdown.Item>new Product</NavDropdown.Item></Link>
+              <Link to="/newproduct">   <NavDropdown.Item>new Product</NavDropdown.Item></Link>
          
             ) : (
               <></>
