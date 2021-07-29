@@ -10,13 +10,13 @@ function PrivateRoute({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(routeProps) => {
-        if (authContext.loggedInUser.user._id) {
+        if (authContext.loggedInUser.user.id) {
           return <Component {...routeProps} {...rest} />;
         } else {
           return (
             <Redirect
               to={{
-                pathname: "/auth/login",
+                pathname: "/login",
                 state: { from: routeProps.location },
               }}
             />

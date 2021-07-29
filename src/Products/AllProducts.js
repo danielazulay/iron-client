@@ -29,6 +29,7 @@ function AllProduct() {
             name={elem.name}
             size={elem.size}
             description={elem.description}
+           
           />
           </Link>
         );

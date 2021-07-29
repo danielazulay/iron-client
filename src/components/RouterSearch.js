@@ -23,13 +23,9 @@ function RouterSearch(props) {
   
     return (
         <div>
+        { props.location.pathname==="/login"|| props.location.pathname==="/signup" || props.location.pathname==="/profile"? null:<Search handleChange={handleChange}   products={products}  />    }
 
       
-
-        { props.location.pathname==="/login"|| props.location.pathname==="/signup" ? null : <Search handleChange={handleChange} products={products} /> }
-
-        
-
 </div>
 
     )
