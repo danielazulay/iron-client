@@ -1,7 +1,6 @@
 import "./App.css";
 import { Link } from "react-router-dom";
 
-
 import { useContext } from "react";
 
 import Container from "react-bootstrap/Container";
@@ -17,32 +16,56 @@ function NavBar() {
       <Container>
         <Navbar.Brand href="/">Iron Beer</Navbar.Brand>
         <div className="d-flex justify-content-end ">
-        <Link to="/CheckOut">  <Navbar.Brand >
-     
-            <i className="fas fa-shopping-cart"></i>
-          </Navbar.Brand></Link>
+          <Link to="/CheckOut">
+            {" "}
+            <Navbar.Brand>
+              {" "}
+              <i className="fas fa-shopping-cart"></i>
+            </Navbar.Brand>
+          </Link>
 
           <NavDropdown
             align="end"
             title={<i className="fas fa-bars"></i>}
             id="navbarScrollingDropdown"
           >
-         <Link to="/">    <NavDropdown.Item >Home</NavDropdown.Item></Link>
+            <Link to="/">
+              {" "}
+              <NavDropdown.Item>Home</NavDropdown.Item>
+            </Link>
 
             {loggedInUser.user._id ? (
               <></>
             ) : (
-              <Link to="/login">   <NavDropdown.Item >Login</NavDropdown.Item></Link>
+              <Link to="/login">
+                {" "}
+                <NavDropdown.Item>Login</NavDropdown.Item>
+              </Link>
             )}
 
             {loggedInUser.user._id ? (
               <></>
             ) : (
-              <Link to="/signup">  <NavDropdown.Item >Sign Up</NavDropdown.Item></Link>
+              <Link to="/signup">
+                {" "}
+                <NavDropdown.Item>Sign Up</NavDropdown.Item>
+              </Link>
             )}
 
             {loggedInUser.user._id ? (
-              <Link to="/profile">   <NavDropdown.Item>Account User</NavDropdown.Item></Link>
+              <Link to="/profile">
+                {" "}
+                <NavDropdown.Item>Account User</NavDropdown.Item>
+              </Link>
+            ) : (
+              <></>
+            )}
+
+            {loggedInUser.user._id ? (
+              <Link to="/new-product">
+                {" "}
+                <NavDropdown.Item>new Product</NavDropdown.Item>
+              </Link>
             ) : (
               <></>
             )}
