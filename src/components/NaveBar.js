@@ -1,4 +1,6 @@
 import "./App.css";
+import { Link } from "react-router-dom";
+
 
 import { useContext } from "react";
 
@@ -15,10 +17,10 @@ function NavBar() {
       <Container>
         <Navbar.Brand href="/">Iron Beer</Navbar.Brand>
         <div className="d-flex justify-content-end ">
-          <Navbar.Brand href="/">
+        <Link to="/CheckOut">  <Navbar.Brand >
             {" "}
             <i className="fas fa-shopping-cart"></i>
-          </Navbar.Brand>
+          </Navbar.Brand></Link>
 
           <NavDropdown
             align="end"

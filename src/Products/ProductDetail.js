@@ -11,7 +11,8 @@ function ProductDetails() {
     description: "",
     size: "",
     price: "",
-    id:""
+    id:"",
+    img:""
   });
 
   const [quantity, setQuantity] = useState(0);
@@ -30,7 +31,7 @@ console.log(response)
     }
     fetchDetails();
   }, [id]);
-
+console.log(cart)
   return (
     <div>
       <CardProducts
@@ -39,6 +40,7 @@ console.log(response)
         description={state.description}
         size={state.size}
         price={state.price}
+        img={state.img}
       />
       <div className="form-group d-inline-block mr-3">
           <label htmlFor="productDetailQuantity">Quantity: </label>
@@ -52,7 +54,7 @@ console.log(response)
           />
             </div>
 <button type="button" className="btn btn-secondary" onClick={()=>{
-console.log(quantity,id,cart)
+
 setCart([...cart, { qtt: quantity, productId: id}])
 
 }}>Add to the cart</button>
