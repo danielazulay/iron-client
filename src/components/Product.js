@@ -36,7 +36,7 @@ function Product() {
   return (
     <form onSubmit={handleSubmit}>
       <TextInput
-        label="Name"
+        label="Nome"
         id="name"
         type="text"
         value={state.name}
@@ -46,7 +46,7 @@ function Product() {
       />
 
       <TextInput
-        label="Validity"
+        label="Validade"
         id="text"
         type="month"
         value={state.validity}
@@ -55,7 +55,7 @@ function Product() {
         required
       />
       <TextInput
-        label="Unity"
+        label="Unidades"
         id="unity"
         type="number"
         value={state.unity}
@@ -64,7 +64,7 @@ function Product() {
         required
       />
       <TextInput
-        label="Description"
+        label="Descrição"
         id="description"
         type="text"
         value={state.description}
@@ -73,7 +73,7 @@ function Product() {
         required
       />
 <div>
-<label htmlFor="category">Category</label>
+<label htmlFor="category">Categoria</label>
       <div className="input-group mb-3">
         <select
          label="Category"
@@ -84,7 +84,7 @@ function Product() {
           className="form-control"
           required
           >
-            <option>Select Category</option>
+            <option>Selecione a Categoria</option>
             <option value="leve">leve</option>
             <option value="Maltadas">Maltadas</option>
             <option value="Lupuladas">Lupuladas</option>
@@ -96,7 +96,7 @@ function Product() {
       </div>
     </div>
 <div>
-      <label htmlFor="size">Size</label>
+      <label htmlFor="size">Tamanho</label>
       <div className="input-group mb-3">
         <select
          label="Size"
@@ -107,7 +107,7 @@ function Product() {
           className="form-control"
           required
           >
-            <option>Select Size</option>
+            <option>Selecione o Tamanho</option>
             <option value="310">310</option>
             <option value="330">330</option>
             <option value="355">355</option>
@@ -117,7 +117,7 @@ function Product() {
       </div>
     </div>
     <TextInput
-        label="Price"
+        label="Preço"
         id="price"
         type="number"
         value={state.price}
@@ -127,11 +127,11 @@ function Product() {
       />
       <div className="form-group">
       <form action="/action_page.php">
-    <label for="img">Select image:</label>
+    <label for="img">Selecione a Imagem:</label>
     <input type="file" id="img" name="img" accept="image/*"></input>
     </form>
         <button className="btn btn-primary" type="submit">
-          Save
+          Adicionar
         </button>
       </div>
       </form>

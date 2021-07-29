@@ -17,9 +17,9 @@ function NavBar() {
   
    
     <NavDropdown align="end"  title={<i className="fas fa-bars" ></i>} id="navbarScrollingDropdown">
-        <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-        <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
-        <NavDropdown.Item href="/profile">Account User</NavDropdown.Item>
+        <NavDropdown.Item href="/login">Entrar</NavDropdown.Item>
+        <NavDropdown.Item href="/signup">Cadastre-se</NavDropdown.Item>
+        <NavDropdown.Item href="/profile">Minha Conta</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
       </NavDropdown>
