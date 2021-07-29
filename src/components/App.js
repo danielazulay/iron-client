@@ -18,8 +18,6 @@ import EditProducts from "./EditProducts";
 import DeleteProduct from "./DeleteProduct"
 import EditeUser from "../routerComponents/account/EditeUser";
 
-
-
 function App() {
   return (
     <BrowserRouter>
