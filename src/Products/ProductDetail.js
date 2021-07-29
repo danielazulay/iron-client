@@ -11,7 +11,8 @@ function ProductDetails() {
     description: "",
     size: "",
     price: "",
-    id:""
+    id:"",
+    img: ""
   });
 
   const [quantity, setQuantity] = useState(0);
@@ -35,6 +36,7 @@ console.log(response)
     <div>
       <CardProducts
       id={state._id}
+      image={state.img}
         name={state.name}
         description={state.description}
         size={state.size}
