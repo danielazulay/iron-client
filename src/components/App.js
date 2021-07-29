@@ -32,7 +32,7 @@ function App() {
             <Route path="/new-product" component={Product} />
   
           
-            <Route path="/all-products" component={AllProduct} />
+            <Route exact path="/" component={AllProduct} />
             <Route path="/product-details/:id" component={ProductDetails} />
             <Route path="/edit-product/:id" component={EditProducts} />
             <Route path="/delete-product/:id" component={DeleteProduct} />
