@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import TextProfile from "../../components/TextProfile";
 import api from "../../apis/api";
 

@@ -41,7 +41,7 @@ console.log(response)
         price={state.price}
       />
       <div className="form-group d-inline-block mr-3">
-          <label htmlFor="productDetailQuantity">Quantity: </label>
+          <label htmlFor="productDetailQuantity">Quantidade: </label>
           <input
             type="number"
             id="productDetailQuantity"

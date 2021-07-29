@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import TextInput from "../../components/TextInput";
-import { useParams, useHistory } from "react-router";
+import { useParams } from "react-router";
 import api from "../../apis/api";
 
 function EditeUser(props) {
