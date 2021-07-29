@@ -13,6 +13,7 @@ import ResultSearch from "../components/ResultSearch";
 import RouterSearch from "../components/RouterSearch";
 import NaveBar from "../components/NaveBar";
 import ProductDetails from "../Products/ProductDetail";
+import { CartContextComponent } from "../contexts/cartContext"
 import EditProducts from "./EditProducts";
 import DeleteProduct from "./DeleteProduct"
 
@@ -20,8 +21,9 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
+     
         <AuthContextComponent>
-        
+        <CartContextComponent>
           <div className="container mt-3">
             <NaveBar />
             <Route component={RouterSearch} />
@@ -37,6 +39,7 @@ function App() {
             <Route path="/edit-product/:id" component={EditProducts} />
             <Route path="/delete-product/:id" component={DeleteProduct} />
           </div>
+          </CartContextComponent>
         </AuthContextComponent>
       </Switch>
     </BrowserRouter>
