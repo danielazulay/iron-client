@@ -23,6 +23,8 @@ function NavBar() {
             title={<i className="fas fa-bars"></i>}
             id="navbarScrollingDropdown"
           >
+            <NavDropdown.Item href="/">Home</NavDropdown.Item>
+
             {loggedInUser.user._id ? (
               <></>
             ) : (
