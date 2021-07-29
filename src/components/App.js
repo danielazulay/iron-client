@@ -27,7 +27,7 @@ function App() {
             <Route component={RouterSearch} />
             <Route path="/result-search/:name" component={ResultSearch} />
             <ProtectedRoute path="/signup" component={Signup} />
-            <ProtectedRoute path="/profile" component={Profile} />
+            <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
             <Route path="/new-product" component={Product} />
   
