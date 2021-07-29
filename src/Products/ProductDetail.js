@@ -30,7 +30,7 @@ console.log(response)
     }
     fetchDetails();
   }, [id]);
-
+console.log(cart)
   return (
     <div>
       <CardProducts
@@ -52,7 +52,7 @@ console.log(response)
           />
             </div>
 <button type="button" className="btn btn-secondary" onClick={()=>{
-console.log(quantity,id,cart)
+
 setCart([...cart, { qtt: quantity, productId: id}])
 
 }}>Add to the cart</button>
