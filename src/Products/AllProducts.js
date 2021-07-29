@@ -25,11 +25,11 @@ function AllProduct() {
         return (
           <Link  to={`/product-details/${elem._id}`} className="allProduct" style={{ maxWidth: "540px" }}>
           <CardProducts
-          id={elem._id}
+            id={elem._id}
             name={elem.name}
             size={elem.size}
+            image={elem.img}
             description={elem.description}
-           
           />
           </Link>
         );

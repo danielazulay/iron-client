@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-
 import api from "../apis/api";
 import TextInput from "./TextInput";
+import FileBase64 from 'react-file-base64';
 
 function Product() {
   const [state, setState] = useState({
@@ -126,15 +126,16 @@ function Product() {
         required
       />
       <div className="form-group">
-      <form action="/action_page.php">
-    <label for="img">Selecione a Imagem:</label>
-    <input type="file" id="img" name="img" accept="image/*"></input>
-    </form>
-        <button className="btn btn-primary" type="submit">
-          Adicionar
-        </button>
+      <FileBase64
+        type="file"
+        multiple={false}
+        onDone={({ base64 }) => setState({ ...state, img: base64 })}
+      />
+      <button className="btn btn-primary" type="submit">
+        Adicionar
+      </button>
       </div>
-      </form>
+    </form>
   );
 }
 
