@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom'
+
  
 function CardProducts(props) {
   return (
@@ -19,6 +19,9 @@ function CardProducts(props) {
             <p className="card-text">{props.description}</p>
             <p className="card-text">
               <small className="text-muted">{props.size}</small>
+            </p>
+            <p className="card-text">
+              <small className="text-muted">{props.price}</small>
             </p>
           </div>
         </div>

@@ -12,13 +12,14 @@ import ResultSearch from "../components/ResultSearch";
 import RouterSearch from "../components/RouterSearch";
 import NaveBar from "../components/NaveBar";
 import ProductDetails from "../Products/ProductDetail";
-
+import { CartContextComponent } from "../contexts/cartContext"
 function App() {
   return (
     <BrowserRouter>
       <Switch>
+     
         <AuthContextComponent>
-        
+        <CartContextComponent>
           <div className="container mt-3">
             <NaveBar />
             <Route component={RouterSearch} />
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/" component={AllProduct} />
             <Route path="/productDetails/:id" component={ProductDetails} />
           </div>
+          </CartContextComponent>
         </AuthContextComponent>
       </Switch>
     </BrowserRouter>
