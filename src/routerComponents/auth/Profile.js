@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import TextProfile from "../../components/TextProfile";
 import api from "../../apis/api";
 
 function Profile() {
   const [state, setState] = useState({
+    _id: "",
     name: "",
     email: "",
     password: "",
@@ -37,7 +39,7 @@ function Profile() {
   return (
     <div>
       <TextProfile label="Name" name={state.name} />
-      <TextProfile label="Email" name={state.email} />
+      <TextProfile label="E-mail" name={state.email} />
       <TextProfile label="BirthDate" name={state.birthDate} />
       <TextProfile label="Document" name={state.document} />
       <TextProfile label="Phone Number" name={state.phoneNumber} />
@@ -50,7 +52,9 @@ function Profile() {
       <TextProfile label="State" name={state.address.district} />
       <TextProfile label="Neighbourhood" name={state.address.neighbourhood} />
       <TextProfile label="Postal Code" name={state.address.postalCode} />
-      
+
+      <Link style={{ color: "black" }} className="far fa-edit"  to={ `/editUser/${state._id}` }></Link>
+
     </div>
   );
 }
