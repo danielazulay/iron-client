@@ -33,6 +33,8 @@ function ProductDetails() {
     fetchDetails();
   }, [id]);
 
+  console.log("eu sou o loggedInUser ---> ",loggedInUser.user._id);
+  console.log("eu sou o userId --->", state.userid[0])
   return (
     <div>
       <CardProducts

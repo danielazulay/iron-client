@@ -8,7 +8,7 @@ import TextInput from "./TextInput";
 function EditProduct(props) {
   const [state, setState] = useState({
     name: "",
-    bestUse: "",
+    validity: "",
     unity: "",
     description: "",
     category: "",
@@ -22,16 +22,10 @@ function EditProduct(props) {
   useEffect(() => {
     async function fetchProfile() {
       try {
-        const response = await api.get(`/productDetails/${id}`);
-
-
-const date = new Date(response.data.bestUse)
+        const response = await api.get("/product");
 
         setState({
           ...response.data,
-          bestUse: `${date.getFullYear()}-${String(
-            date.getMonth() + 1
-          ).padStart(2, "0")}-${String(date.getUTCDate()).padStart(2, "0")}`,
         });
       } catch (err) {
         console.error(err);
@@ -56,7 +50,7 @@ const date = new Date(response.data.bestUse)
         ...state,
         address: {
           name: "",
-          bestUse: "",
+          validity: "",
           unity: "",
           description: "",
           category: "",
@@ -70,7 +64,7 @@ const date = new Date(response.data.bestUse)
       setError(err.response.data);
     }
   }
-console.log(state)
+
   return (
     <form onSubmit={handleSubmit}>
       <TextInput
@@ -86,10 +80,10 @@ console.log(state)
       <TextInput
         label="Validade"
         id="text"
-        type="date"
-        value={state.bestUse}
+        type="month"
+        value={state.validity}
         onChange={handleChange}
-        name="bestUse"
+        name="validity"
         required
       />
       <TextInput
