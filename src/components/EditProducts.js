@@ -165,11 +165,7 @@ console.log(state)
       />
       <div className="form-group">
       <form action="/action_page.php">
-<<<<<<< HEAD
-    <label for="img">Selecione a Imagem:</label>
-=======
     <label htmlFor="img">Select image:</label>
->>>>>>> 5b760da166b0fc1aa491c31cd9c4fdbe483c9044
     <input type="file" id="img" name="img" accept="image/*"></input>
     </form>
         <button className="btn btn-primary" type="submit">
