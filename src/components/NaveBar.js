@@ -7,15 +7,14 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { AuthContext } from "../contexts/authContext";
-import { useContext } from "react";
+
 
 
 function NaveBar() {
   const tokenKey = 'loggedInUser';
   const locationRoute = useLocation();
   const storage = localStorage.getItem(tokenKey);
-  const { loggedInUser } = useContext(AuthContext);
+
   const [token, setToken] = useState(storage);
 
   useEffect(() => {
