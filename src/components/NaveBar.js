@@ -35,7 +35,7 @@ function NaveBar() {
           <NavDropdown align="end"  title={<i className="fas fa-bars" ></i>} id="navbarScrollingDropdown">
 
             { 
-              !token && <NavDropdown.Item href="/auth/login">Entrar</NavDropdown.Item>
+              !token && <NavDropdown.Item href="/login">Entrar</NavDropdown.Item>
             }
             { 
               !token && <NavDropdown.Item href="/signup">Cadastre-se</NavDropdown.Item>
