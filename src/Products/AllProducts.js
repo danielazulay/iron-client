@@ -9,7 +9,6 @@ function AllProduct() {
     async function fetchProduct() {
       try {
         const response = await api.get("/getAllProducts");
-        console.log(response.data);
 
         setState([...response.data]);
       } catch (err) {
@@ -21,13 +20,13 @@ function AllProduct() {
 
   return (
     <div>
-      {state.map((elem) => {
+      {state.map((elem, i) => {
         return (
-          <Link  to={`/productDetails/${elem._id}`} className="allProduct" style={{ maxWidth: "540px" }}>
+          <Link key={i} to={`/productDetails/${elem._id}`} className="allProduct" style={{ maxWidth: "540px" }}>
           <CardProducts
           id={elem._id}
             name={elem.name}
-            size={elem.size}
+            price={elem.price}
             description={elem.description}
             img={elem.img}
           />

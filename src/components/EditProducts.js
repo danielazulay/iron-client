@@ -38,7 +38,7 @@ const date = new Date(response.data.bestUse)
       }
     }
     fetchProfile();
-  }, []);
+  }, [id]);
 
   function handleChange(event) {
     setState({
@@ -166,7 +166,7 @@ console.log(state)
       <div className="form-group">
       <form action="/action_page.php">
     <label htmlFor="img">Select image:</label>
-    <input type="file" id="img" name="img" accept="image/*"></input>
+    <input type="file" id="img" name="img" onChange={handleChange} accept="image/*"></input>
     </form>
         <button className="btn btn-primary" type="submit">
           Save
