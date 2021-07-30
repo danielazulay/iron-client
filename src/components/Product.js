@@ -6,11 +6,12 @@ import FileBase64 from 'react-file-base64';
 function Product() {
   const [state, setState] = useState({
     name: "",
-    validity: "",
+    bestUse: "",
     unity: "",
     description: "",
     category: "",
     size: "",
+    alccol: "",
     img: "",
   });
 
@@ -25,14 +26,14 @@ function Product() {
     event.preventDefault();
 
     try {
-      const response = await api.post("/newProduct", {
-        ...state,
-      });
+      const response = await api.post("/newProduct", state);
       console.log(response);
     } catch (err) {
       console.log(err.response);
     }
   }
+
+  console.log(state)
   return (
     <form onSubmit={handleSubmit}>
       <TextInput
@@ -48,10 +49,10 @@ function Product() {
       <TextInput
         label="Validade"
         id="text"
-        type="month"
-        value={state.validity}
+        type="date"
+        value={state.bestUse}
         onChange={handleChange}
-        name="validity"
+        name="bestUse"
         required
       />
       <TextInput
@@ -116,6 +117,28 @@ function Product() {
           </select>
         </div>
       </div>
+
+      <div>
+      <label htmlFor="size">Alccol</label>
+      <div className="input-group mb-3">
+        <select
+         label="alccol"
+         id="alccol"
+         value={state.alccol}
+         onChange={handleChange}
+         name="alccol"
+          className="form-control"
+          required
+          >
+            <option>Selecione o Tamanho</option>
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+      </div>
+
+
+
       <TextInput
         label="Preço"
         id="price"
