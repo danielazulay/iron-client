@@ -22,7 +22,7 @@ function AllProduct() {
     <div>
       {state.map((elem, i) => {
         return (
-          <Link key={i} to={`/productDetails/${elem._id}`} className="allProduct" style={{ maxWidth: "540px" }}>
+          <Link  to={`/product-details/${elem._id}`} className="allProduct" style={{ maxWidth: "540px" }}>
           <CardProducts
             id={elem._id}
             name={elem.name}
