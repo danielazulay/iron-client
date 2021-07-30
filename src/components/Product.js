@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-
 import api from "../apis/api";
 import TextInput from "./TextInput";
+import FileBase64 from 'react-file-base64';
 
 function Product() {
   const [state, setState] = useState({
@@ -36,7 +36,7 @@ function Product() {
   return (
     <form onSubmit={handleSubmit}>
       <TextInput
-        label="Name"
+        label="Nome"
         id="name"
         type="text"
         value={state.name}
@@ -46,7 +46,7 @@ function Product() {
       />
 
       <TextInput
-        label="Validity"
+        label="Validade"
         id="text"
         type="month"
         value={state.validity}
@@ -55,7 +55,7 @@ function Product() {
         required
       />
       <TextInput
-        label="Unity"
+        label="Unidades"
         id="unity"
         type="number"
         value={state.unity}
@@ -64,7 +64,7 @@ function Product() {
         required
       />
       <TextInput
-        label="Description"
+        label="Descrição"
         id="description"
         type="text"
         value={state.description}
@@ -72,31 +72,31 @@ function Product() {
         name="description"
         required
       />
-<div>
-<label htmlFor="category">Category</label>
-      <div className="input-group mb-3">
-        <select
-         label="Category"
-         id="category"
-         value={state.category}
-         onChange={handleChange}
-         name="category"
-          className="form-control"
-          required
-          >
-            <option>Select Category</option>
-            <option value="leve">leve</option>
-            <option value="Maltadas">Maltadas</option>
-            <option value="Lupuladas">Lupuladas</option>
-            <option value="Torradas">Torradas</option>
-            <option value="Frutadas">Frutadas</option>
-            <option value="Sem Alcool">Sem Alcool</option>
-            <option value="Sem Glutem">Sem Glutem</option>
+      <div>
+        <label htmlFor="category">Categoria</label>
+        <div className="input-group mb-3">
+          <select
+            label="Category"
+            id="category"
+            value={state.category}
+            onChange={handleChange}
+            name="category"
+            className="form-control"
+            required
+            >
+              <option>Selecione a Categoria</option>
+              <option value="leve">leve</option>
+              <option value="Maltadas">Maltadas</option>
+              <option value="Lupuladas">Lupuladas</option>
+              <option value="Torradas">Torradas</option>
+              <option value="Frutadas">Frutadas</option>
+              <option value="Sem Alcool">Sem Alcool</option>
+              <option value="Sem Glutem">Sem Glutem</option>
           </select>
+        </div>
       </div>
-    </div>
-<div>
-      <label htmlFor="size">Size</label>
+    <div>
+      <label htmlFor="size">Tamanho</label>
       <div className="input-group mb-3">
         <select
          label="Size"
@@ -107,17 +107,17 @@ function Product() {
           className="form-control"
           required
           >
-            <option>Select Size</option>
+            <option>Selecione o Tamanho</option>
             <option value="310">310</option>
             <option value="330">330</option>
             <option value="355">355</option>
             <option value="500">500</option>
             <option value="600">600</option>
           </select>
+        </div>
       </div>
-    </div>
-    <TextInput
-        label="Price"
+      <TextInput
+        label="Preço"
         id="price"
         type="number"
         value={state.price}
@@ -126,15 +126,16 @@ function Product() {
         required
       />
       <div className="form-group">
-      <form action="/action_page.php">
-    <label for="img">Select image:</label>
-    <input type="file" id="img" name="img" accept="image/*"></input>
-    </form>
+        <FileBase64
+          type="file"
+          multiple={false}
+          onDone={({ base64 }) => setState({ ...state, img: base64 })}
+        />
         <button className="btn btn-primary" type="submit">
-          Save
+          Adicionar
         </button>
       </div>
-      </form>
+    </form>
   );
 }
 

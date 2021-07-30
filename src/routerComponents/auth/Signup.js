@@ -57,7 +57,7 @@ function Signup(props) {
   return (
     <form onSubmit={handleSubmit}>
       <TextInput
-        label="Full Name"
+        label="Nome Completo"
         id="name"
         type="text"
         value={state.name}
@@ -76,7 +76,7 @@ function Signup(props) {
         required
       />
       <TextInput
-        label="PassWord"
+        label="Senha"
         id="password"
         type="password"
         value={state.password}
@@ -85,7 +85,7 @@ function Signup(props) {
         required
       />
       <TextInput
-        label="Document"
+        label="CPF"
         id="document"
         type="number"
         value={state.document}
@@ -94,9 +94,9 @@ function Signup(props) {
         required
       />
 
-      <h3 className="mb-3">Address</h3>
+      <h3 className="mb-3">Endereço</h3>
       <TextInput
-        label="Street"
+        label="Rua"
         id="street"
         type="text"
         value={state.street}
@@ -105,7 +105,7 @@ function Signup(props) {
         required
       />
       <TextInput
-        label="Number"
+        label="Numero"
         id="number"
         type="text"
         value={state.number}
@@ -115,7 +115,7 @@ function Signup(props) {
       />
 
       <TextInput
-        label="Neighbourhood"
+        label="Complemento"
         id="neighbourhood"
         type="text"
         value={state.neighbourhood}
@@ -124,7 +124,7 @@ function Signup(props) {
         required
       />
       <TextInput
-        label="City"
+        label="Cidade"
         id="city"
         type="text"
         value={state.city}
@@ -133,7 +133,7 @@ function Signup(props) {
         required
       />
       <TextInput
-        label="State"
+        label="Estado"
         id="district"
         type="text"
         value={state.district}
@@ -142,7 +142,7 @@ function Signup(props) {
         required
       />
       <TextInput
-        label="PostalCode"
+        label="CEP"
         id="postalCode"
         type="number"
         value={state.postalCode}
@@ -151,7 +151,7 @@ function Signup(props) {
         required
       />
       <TextInput
-        label="BirthDate"
+        label="Data de Nascimento"
         id="birthDate"
         type="date"
         value={state.birthDate}
@@ -160,7 +160,7 @@ function Signup(props) {
         required={false}
       />
       <TextInput
-        label="PhoneNumber"
+        label="Telefone"
         id="phoneNumber"
         type="text"
         value={state.phoneNumber}
@@ -168,21 +168,20 @@ function Signup(props) {
         name="phoneNumber"
         required={false}
       />
-
-      <div>
-        <label htmlFor="role">Role</label>
-        <div className="input-group mb-3">
-          <select
-            label="Role"
-            id="role"
-            value={state.role}
-            onChange={handleChange}
-            name="role"
-            required
-            className="form-control"
+       <div>
+      <label htmlFor="role">Escolha sua Função</label>
+      <div className="input-group mb-3">
+        <select
+         label="Role"
+         id="role"
+         value={state.role}
+         onChange={handleChange}
+         name="role"
+         required
+          className="form-control"
           >
-            <option value="ADMIN">Admin</option>
-            <option value="USER">User</option>
+            <option value="ADMIN">Vendedor</option>
+            <option value="USER">Comprador</option>
           </select>
         </div>
       </div>

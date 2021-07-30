@@ -12,8 +12,8 @@ function ProductDetails() {
     description: "",
     size: "",
     price: "",
-    id: "",
-    img: "",
+    id:"",
+    img: ""
   });
   const { loggedInUser } = useContext(AuthContext);
   const [quantity, setQuantity] = useState(0);
@@ -36,7 +36,8 @@ function ProductDetails() {
   return (
     <div>
       <CardProducts
-        id={state._id}
+      id={state._id}
+      image={state.img}
         name={state.name}
         description={state.description}
         size={state.size}

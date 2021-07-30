@@ -12,8 +12,8 @@ function Search(props) {
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Search"
-              aria-label="Search"
+              placeholder="Pesquise Produtos..."
+              aria-label="search"
               value={props.products.name}
               name="name"
               onChange={props.handleChange}
@@ -26,7 +26,7 @@ function Search(props) {
                 history.push(`/result-search/${props.products.name}`);
               }}
             >
-              Search
+             Pesquisar
             </button>
           </form>
         </div>

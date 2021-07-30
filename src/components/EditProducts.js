@@ -74,7 +74,7 @@ console.log(state)
   return (
     <form onSubmit={handleSubmit}>
       <TextInput
-        label="Name"
+        label="Nome"
         id="name"
         type="text"
         value={state.name}
@@ -84,7 +84,7 @@ console.log(state)
       />
 
       <TextInput
-        label="Validity"
+        label="Validade"
         id="text"
         type="date"
         value={state.bestUse}
@@ -93,7 +93,7 @@ console.log(state)
         required
       />
       <TextInput
-        label="Unity"
+        label="Unidade"
         id="unity"
         type="number"
         value={state.unity}
@@ -102,7 +102,7 @@ console.log(state)
         required
       />
       <TextInput
-        label="Description"
+        label="Descrição"
         id="description"
         type="text"
         value={state.description}
@@ -111,7 +111,7 @@ console.log(state)
         required
       />
 <div>
-<label htmlFor="category">Category</label>
+<label htmlFor="category">Categoria</label>
       <div className="input-group mb-3">
         <select
          label="Category"
@@ -122,7 +122,7 @@ console.log(state)
           className="form-control"
           required
           >
-            <option>Select Category</option>
+            <option>Selecione a Categoria</option>
             <option value="leve">leve</option>
             <option value="Maltadas">Maltadas</option>
             <option value="Lupuladas">Lupuladas</option>
@@ -134,7 +134,7 @@ console.log(state)
       </div>
     </div>
 <div>
-      <label htmlFor="size">Size</label>
+      <label htmlFor="size">Tamanho</label>
       <div className="input-group mb-3">
         <select
          label="Size"
@@ -145,7 +145,7 @@ console.log(state)
           className="form-control"
           required
           >
-            <option>Select Size</option>
+            <option>Selecione o Tamanho</option>
             <option value="310">310</option>
             <option value="330">330</option>
             <option value="355">355</option>
@@ -155,7 +155,7 @@ console.log(state)
       </div>
     </div>
     <TextInput
-        label="Price"
+        label="Preço"
         id="price"
         type="number"
         value={state.price}
@@ -165,11 +165,11 @@ console.log(state)
       />
       <div className="form-group">
       <form action="/action_page.php">
-    <label htmlFor="img">Select image:</label>
-    <input type="file" id="img" name="img" onChange={handleChange} accept="image/*"></input>
+    <label for="img">Selecione a Imagem:</label>
+    <input type="file" id="img" name="img" accept="image/*"></input>
     </form>
         <button className="btn btn-primary" type="submit">
-          Save
+          Adicionar
         </button>
       </div>
       </form>
