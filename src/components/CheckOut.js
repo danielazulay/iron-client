@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 
 import { CartContext } from "../contexts/cartContext";
-import { AuthContext } from "../contexts/authContext";
+
 
 import api from "../apis/api";
 
@@ -13,7 +13,7 @@ const stripePromise = loadStripe(
 
 function Checkout() {
   const { cart } = useContext(CartContext);
-  const { loggedInUser } = useContext(AuthContext);
+  
 
   const [state, setState] = useState([]);
 

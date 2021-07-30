@@ -38,7 +38,7 @@ const date = new Date(response.data.bestUse)
       }
     }
     fetchProfile();
-  }, []);
+  }, [id]);
 
   function handleChange(event) {
     setState({

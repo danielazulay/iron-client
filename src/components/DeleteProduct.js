@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import api from "../apis/api";
 
 function DeleteAccount() {
-  const [show, setShow] = useState(true);
+  const [show] = useState(true);
   const history = useHistory();
   const { id } = useParams();
 
