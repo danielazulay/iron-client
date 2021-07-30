@@ -39,9 +39,6 @@ function NaveBar() {
               token && <NavDropdown.Item href="/profile">Minha Conta</NavDropdown.Item>
             }
             { 
-              token && <NavDropdown.Item href="/editUser">Editar Perfil</NavDropdown.Item>
-            }
-            { 
               token && <NavDropdown.Item href="/newProduct">Novo Produto</NavDropdown.Item>
             }
             { 

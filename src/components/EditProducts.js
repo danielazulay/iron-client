@@ -8,7 +8,7 @@ import TextInput from "./TextInput";
 function EditProduct(props) {
   const [state, setState] = useState({
     name: "",
-    validity: "",
+    bestUse: "",
     unity: "",
     description: "",
     category: "",
@@ -22,10 +22,16 @@ function EditProduct(props) {
   useEffect(() => {
     async function fetchProfile() {
       try {
-        const response = await api.get("/product");
+        const response = await api.get(`/productDetails/${id}`);
+
+
+const date = new Date(response.data.bestUse)
 
         setState({
           ...response.data,
+          bestUse: `${date.getFullYear()}-${String(
+            date.getMonth() + 1
+          ).padStart(2, "0")}-${String(date.getUTCDate()).padStart(2, "0")}`,
         });
       } catch (err) {
         console.error(err);
@@ -50,7 +56,7 @@ function EditProduct(props) {
         ...state,
         address: {
           name: "",
-          validity: "",
+          bestUse: "",
           unity: "",
           description: "",
           category: "",
@@ -64,7 +70,7 @@ function EditProduct(props) {
       setError(err.response.data);
     }
   }
-
+console.log(state)
   return (
     <form onSubmit={handleSubmit}>
       <TextInput
@@ -80,10 +86,10 @@ function EditProduct(props) {
       <TextInput
         label="Validade"
         id="text"
-        type="month"
-        value={state.validity}
+        type="date"
+        value={state.bestUse}
         onChange={handleChange}
-        name="validity"
+        name="bestUse"
         required
       />
       <TextInput
@@ -159,7 +165,11 @@ function EditProduct(props) {
       />
       <div className="form-group">
       <form action="/action_page.php">
+<<<<<<< HEAD
     <label for="img">Selecione a Imagem:</label>
+=======
+    <label htmlFor="img">Select image:</label>
+>>>>>>> 5b760da166b0fc1aa491c31cd9c4fdbe483c9044
     <input type="file" id="img" name="img" accept="image/*"></input>
     </form>
         <button className="btn btn-primary" type="submit">

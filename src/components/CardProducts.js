@@ -6,7 +6,7 @@ function CardProducts(props) {
 
     <div className="card mb-3" style={{ maxWidth: "540px" }}>
       <div className="row g-0">
-        <div className="col-md-4">
+        <div className="col-md-10">
           <img
             src={props.image}
             className="img-fluid rounded-start"

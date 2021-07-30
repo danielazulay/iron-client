@@ -31,7 +31,8 @@ function Signup(props) {
     event.preventDefault(props);
 
     try {
-      const { street, neighbourhood, city, district, postalCode, number } = state;
+      const { street, neighbourhood, city, district, postalCode, number } =
+        state;
 
       const response = await api.post("/signup", {
         ...state,
@@ -51,7 +52,7 @@ function Signup(props) {
     }
   }
 
- console.log(state)
+  console.log(state);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -62,7 +63,7 @@ function Signup(props) {
         value={state.name}
         onChange={handleChange}
         name="name"
-        required= {true}
+        required={true}
       />
 
       <TextInput
@@ -167,6 +168,7 @@ function Signup(props) {
         name="phoneNumber"
         required={false}
       />
+<<<<<<< HEAD
        <div>
       <label htmlFor="role">Escolha sua Função</label>
       <div className="input-group mb-3">
@@ -178,12 +180,27 @@ function Signup(props) {
          name="role"
          required
           className="form-control"
+=======
+
+      <div>
+        <label htmlFor="role">Role</label>
+        <div className="input-group mb-3">
+          <select
+            label="Role"
+            id="role"
+            value={state.role}
+            onChange={handleChange}
+            name="role"
+            required
+            className="form-control"
+>>>>>>> 5b760da166b0fc1aa491c31cd9c4fdbe483c9044
           >
             <option value="ADMIN">Vendedor</option>
             <option value="USER">Comprador</option>
           </select>
+        </div>
       </div>
-    </div>
+      
       <div className="form-group">
         <button className="btn btn-primary" type="submit">
           Save

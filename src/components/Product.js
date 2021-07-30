@@ -72,30 +72,30 @@ function Product() {
         name="description"
         required
       />
-<div>
-<label htmlFor="category">Categoria</label>
-      <div className="input-group mb-3">
-        <select
-         label="Category"
-         id="category"
-         value={state.category}
-         onChange={handleChange}
-         name="category"
-          className="form-control"
-          required
-          >
-            <option>Selecione a Categoria</option>
-            <option value="leve">leve</option>
-            <option value="Maltadas">Maltadas</option>
-            <option value="Lupuladas">Lupuladas</option>
-            <option value="Torradas">Torradas</option>
-            <option value="Frutadas">Frutadas</option>
-            <option value="Sem Alcool">Sem Alcool</option>
-            <option value="Sem Glutem">Sem Glutem</option>
+      <div>
+        <label htmlFor="category">Categoria</label>
+        <div className="input-group mb-3">
+          <select
+            label="Category"
+            id="category"
+            value={state.category}
+            onChange={handleChange}
+            name="category"
+            className="form-control"
+            required
+            >
+              <option>Selecione a Categoria</option>
+              <option value="leve">leve</option>
+              <option value="Maltadas">Maltadas</option>
+              <option value="Lupuladas">Lupuladas</option>
+              <option value="Torradas">Torradas</option>
+              <option value="Frutadas">Frutadas</option>
+              <option value="Sem Alcool">Sem Alcool</option>
+              <option value="Sem Glutem">Sem Glutem</option>
           </select>
+        </div>
       </div>
-    </div>
-<div>
+    <div>
       <label htmlFor="size">Tamanho</label>
       <div className="input-group mb-3">
         <select
@@ -114,9 +114,9 @@ function Product() {
             <option value="500">500</option>
             <option value="600">600</option>
           </select>
+        </div>
       </div>
-    </div>
-    <TextInput
+      <TextInput
         label="Preço"
         id="price"
         type="number"
@@ -126,14 +126,14 @@ function Product() {
         required
       />
       <div className="form-group">
-      <FileBase64
-        type="file"
-        multiple={false}
-        onDone={({ base64 }) => setState({ ...state, img: base64 })}
-      />
-      <button className="btn btn-primary" type="submit">
-        Adicionar
-      </button>
+        <FileBase64
+          type="file"
+          multiple={false}
+          onDone={({ base64 }) => setState({ ...state, img: base64 })}
+        />
+        <button className="btn btn-primary" type="submit">
+          Adicionar
+        </button>
       </div>
     </form>
   );

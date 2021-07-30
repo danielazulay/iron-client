@@ -16,6 +16,7 @@ import ProductDetails from "../Products/ProductDetail";
 import { CartContextComponent } from "../contexts/cartContext"
 import EditProducts from "./EditProducts";
 import DeleteProduct from "./DeleteProduct"
+import Checkout from "./CheckOut"
 import EditeUser from "../routerComponents/account/EditeUser";
 
 function App() {
@@ -36,9 +37,11 @@ function App() {
             <Route path="/editUser/:id" component={EditeUser} />
           
             <Route exact path="/" component={AllProduct} />
-            <Route path="/product-details/:id" component={ProductDetails} />
+            <Route path="/productDetails/:id" component={ProductDetails} />
             <Route path="/edit-product/:id" component={EditProducts} />
             <Route path="/delete-product/:id" component={DeleteProduct} />
+            <Route path="/CheckOut" component={Checkout} />
+        
           </div>
           </CartContextComponent>
         </AuthContextComponent>

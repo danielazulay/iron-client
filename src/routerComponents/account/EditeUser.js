@@ -2,22 +2,24 @@ import { useEffect, useState } from "react";
 import TextInput from "../../components/TextInput";
 import { useParams } from "react-router";
 import api from "../../apis/api";
+import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 function EditeUser(props) {
+
+  const history = useHistory();
+
   const [state, setState] = useState({
-    _id: "",
     name: "",
     email: "",
     password: "",
     document: "",
-    address: {
       street: "",
       neighbourhood: "",
       city: "",
       district: "",
       postalCode: "",
       number: "",
-    },
     birthDate: "",
     phoneNumber: "",
     role: "",
@@ -26,16 +28,32 @@ function EditeUser(props) {
   const { id } = useParams();
 
   function handleChange(event) {
-    setState({ ...state, [event.target.name]: event.target.value });
+    setState({ ...state, [event.currentTarget.name]: event.currentTarget.value, });
   }
 
   useEffect(() => {
     async function fetchEditeUser() {
       try {
         const fondUser = await api.get("/profile");
-        setState({ ...fondUser.data });
 
-        
+        const addressObj = ({ ...fondUser.data.address });
+
+        delete fondUser.data.address;
+        delete addressObj._id;
+
+        const date = new Date(fondUser.data.birthDate);
+
+        setState({
+          ...fondUser.data,
+          ...addressObj,
+          birthDate: `${date.getFullYear()}-${String(
+            date.getMonth() + 1
+          ).padStart(2, "0")}-${String(date.getUTCDate()).padStart(2, "0")}`,
+        });
+
+
+
+
       } catch (err) {
         console.log(err);
       }
@@ -47,10 +65,29 @@ function EditeUser(props) {
     event.preventDefault();
 
     try {
-      const response = await api.put(`/editUser/${id}`, state);
 
-      console.log(response)
-      props.history.push("/profile");
+      const {
+        street,
+        neighbourhood,
+        city,
+        district,
+        postalCode,
+        number,
+      } = state;
+
+      const response = await api.put(`/editUser/${id}`, {...state, address: {
+        street,
+        neighbourhood,
+        city,
+        district,
+        postalCode,
+        number,
+      },});
+
+      console.log("eu sou handleSubmit --> ", response)
+
+      history.push("/profile")
+
     } catch (err) {
       console.log(err);
     }
@@ -107,7 +144,7 @@ function EditeUser(props) {
         label="Street"
         type="text"
         required={false}
-        value={state.address.street}
+        value={state.street}
         onChange={handleChange}
         name="street"
       />
@@ -115,7 +152,7 @@ function EditeUser(props) {
         label="Number"
         type="text"
         required={false}
-        value={state.address.number}
+        value={state.number}
         onChange={handleChange}
         name="number"
       />
@@ -124,7 +161,7 @@ function EditeUser(props) {
         label="City"
         type="text"
         required={false}
-        value={state.address.city}
+        value={state.city}
         onChange={handleChange}
         name="city"
       />
@@ -133,7 +170,7 @@ function EditeUser(props) {
         label="District"
         type="text"
         required={false}
-        value={state.address.district}
+        value={state.district}
         onChange={handleChange}
         name="district"
       />
@@ -142,7 +179,7 @@ function EditeUser(props) {
         label="Neighbourhood"
         type="text"
         required={false}
-        value={state.address.neighbourhood}
+        value={state.neighbourhood}
         onChange={handleChange}
         name="neighbourhood"
       />
@@ -150,14 +187,18 @@ function EditeUser(props) {
         label="Postal Code"
         type="text"
         required={false}
-        value={state.address.postalCode}
+        value={state.postalCode}
         onChange={handleChange}
         name="postalCode"
       />
-      <button type="submit" class="btn btn-primary">
-        Save Changes
+      <button type="submit" className="SaveBTN btn btn-primary">
+        Save
       </button>
+
+      <Link type="button" to="/" className="btn btn-primary">Cancel</Link>
     </form>
+
+    
   );
 }
 
