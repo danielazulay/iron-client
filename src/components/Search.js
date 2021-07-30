@@ -23,7 +23,7 @@ function Search(props) {
               type="submit"
               onClick={(event) => {
                 event.preventDefault();
-                history.push(`/result-search/${props.products.name}`);
+                history.push(`/resultSearch/${props.products.name}`);
               }}
             >
              Pesquisar

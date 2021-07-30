@@ -168,19 +168,6 @@ function Signup(props) {
         name="phoneNumber"
         required={false}
       />
-<<<<<<< HEAD
-       <div>
-      <label htmlFor="role">Escolha sua Função</label>
-      <div className="input-group mb-3">
-        <select
-         label="Role"
-         id="role"
-         value={state.role}
-         onChange={handleChange}
-         name="role"
-         required
-          className="form-control"
-=======
 
       <div>
         <label htmlFor="role">Role</label>
@@ -193,7 +180,6 @@ function Signup(props) {
             name="role"
             required
             className="form-control"
->>>>>>> 5b760da166b0fc1aa491c31cd9c4fdbe483c9044
           >
             <option value="ADMIN">Vendedor</option>
             <option value="USER">Comprador</option>

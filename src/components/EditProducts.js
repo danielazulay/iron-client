@@ -63,9 +63,10 @@ const date = new Date(response.data.bestUse)
           size: "",
           img: "",
         },
+        
       });
 
-      history.push("/all-products");
+      history.push("/");
     } catch (err) {
       setError(err.response.data);
     }
@@ -168,8 +169,8 @@ console.log(state)
     <label htmlFor="img">Select image:</label>
     <input type="file" id="img" name="img" accept="image/*"></input>
     </form>
-        <button className="btn btn-primary" type="submit">
-          Adicionar
+        <button className="btn btn-primary" type="submit" >
+          Salvar
         </button>
       </div>
       </form>

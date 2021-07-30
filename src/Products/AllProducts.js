@@ -27,8 +27,9 @@ function AllProduct() {
           <CardProducts
             id={elem._id}
             name={elem.name}
-            size={elem.size}
-            image={elem.img}
+     
+            img={elem.img}
+            price={elem.price}
             description={elem.description}
           />
           </Link>

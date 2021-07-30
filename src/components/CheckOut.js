@@ -40,10 +40,10 @@ function Checkout() {
   async function handleSubmit() {
     try {
       const stripe = await stripePromise;
-      console.log("-->>>",cart)
+  
       const data = {
                products: cart.map((product) => {
-                 console.log(product)
+                 console.log(">>>>",product)
           return { productId: product.productId, qtt: product.qtt };
         }),
       };
