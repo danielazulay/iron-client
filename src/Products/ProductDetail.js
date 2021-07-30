@@ -5,7 +5,6 @@ import CardProducts from "../components/CardProducts";
 import { CartContext } from "../contexts/cartContext";
 import { AuthContext } from "../contexts/authContext";
 
-
 function ProductDetails() {
   const [state, setState] = useState({
     userid: [],
@@ -13,8 +12,8 @@ function ProductDetails() {
     description: "",
     size: "",
     price: "",
-    id:"",
-    img: ""
+    id: "",
+    img: "",
   });
   const { loggedInUser } = useContext(AuthContext);
   const [quantity, setQuantity] = useState(0);
@@ -25,7 +24,7 @@ function ProductDetails() {
     async function fetchDetails() {
       try {
         const response = await api.get(`/productDetails/${id}`);
-        console.log("eu sou o productDetails --> ",response);
+        console.log("eu sou o productDetails --> ", response);
         setState({ ...response.data });
       } catch (err) {
         console.log(err);
@@ -35,12 +34,10 @@ function ProductDetails() {
   }, [id]);
 
   return (
-
-
     <div>
       <CardProducts
-      id={state._id}
-      image={state.img}
+        id={state._id}
+        image={state.img}
         name={state.name}
         description={state.description}
         size={state.size}
@@ -67,11 +64,25 @@ function ProductDetails() {
         Add to the cart
       </button>
 
-{state.userid[0] === loggedInUser.user._id ? <Link to={`/delete-product/${id}`}>
-      <i className="far fa-trash-alt"></i>
-          </Link> : <></>}
+      {state.userid[0] === loggedInUser.user._id ? (
+        <Link to={`/delete-product/${id}`}>
+          <i className="far fa-trash-alt"></i>
+        </Link>
+      ) : (
+        <></>
+      )}
 
-          <Link type="button" to={`/edit-product/${id}`} className="btn btn-primary">Edite Product</Link>
+      {state.userid[0] === loggedInUser.user._id ? (
+        <Link
+          type="button"
+          to={`/edit-product/${id}`}
+          className="btn btn-primary"
+        >
+          Edite Product
+        </Link>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
