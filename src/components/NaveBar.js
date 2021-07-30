@@ -1,6 +1,4 @@
 import "./App.css";
-import {Link } from 'react-router-dom'
-import {NavLink} from 'react-router-dom'
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -9,16 +7,12 @@ import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../contexts/authContext";
 
 
-import { AuthContext } from "../contexts/authContext";
-import { useContext } from "react";
-
-
 function NaveBar() {
   const tokenKey = 'loggedInUser';
   const { loggedInUser } = useContext(AuthContext);
   const locationRoute = useLocation();
   const storage = localStorage.getItem(tokenKey);
-  const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
+
   const [token, setToken] = useState(storage);
 
   useEffect(() => {

@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import TextProfile from "../../components/TextProfile";
 import api from "../../apis/api";
-<<<<<<< HEAD
-import { Link } from 'react-router-dom'
-=======
 import {Link} from "react-router-dom"
->>>>>>> 357bf6397e4c8bfa03e574a1908f864c1e882221
 
 function Profile() {
   const [state, setState] = useState({
