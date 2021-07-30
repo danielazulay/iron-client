@@ -22,8 +22,8 @@ function EditProduct(props) {
   useEffect(() => {
     async function fetchProfile() {
       try {
-        const response = await api.get("/product");
-
+        const response = await api.get(`/profile`);
+console.log(response)
         setState({
           ...response.data,
         });
@@ -80,7 +80,7 @@ function EditProduct(props) {
       <TextInput
         label="Validade"
         id="text"
-        type="month"
+        type="date"
         value={state.validity}
         onChange={handleChange}
         name="validity"
