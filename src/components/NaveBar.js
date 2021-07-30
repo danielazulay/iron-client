@@ -61,14 +61,16 @@ function NavBar() {
               <></>
             )}
 
-
             {loggedInUser.user._id ? (
-              <Link to="/newproduct">   <NavDropdown.Item>new Product</NavDropdown.Item></Link>
-         
+              <Link to="/new-product">
+                {" "}
+                <NavDropdown.Item>new Product</NavDropdown.Item>
+              </Link>
             ) : (
               <></>
             )}
-       
+
+           
           
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action5">

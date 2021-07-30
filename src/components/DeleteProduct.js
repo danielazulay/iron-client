@@ -11,15 +11,15 @@ function DeleteAccount() {
   const { id } = useParams();
 
   function handleClose() {
-    setShow(false);
+    
     history.goBack();
   }
 
   async function handleDelete() {
     try {
-     await api.delete(`/deleteProduct/${id}`);
-
-      history.push("/profile");
+      const response  = await api.delete(`/deleteProduct/${id}`);
+      history.push('/profile')
+      
     } catch (err) {
       console.error(err.response.data);
     }
