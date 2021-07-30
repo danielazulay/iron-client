@@ -11,7 +11,7 @@ function DeleteAccount() {
   const { id } = useParams();
 
   function handleClose() {
-    setShow(false);
+    
     history.goBack();
   }
 

@@ -57,9 +57,10 @@ console.log(response)
           size: "",
           img: "",
         },
+        
       });
 
-      history.push("/all-products");
+      history.push("/");
     } catch (err) {
       setError(err.response.data);
     }
@@ -159,11 +160,11 @@ console.log(response)
       />
       <div className="form-group">
       <form action="/action_page.php">
-    <label for="img">Selecione a Imagem:</label>
+    <label htmlFor="img">Select image:</label>
     <input type="file" id="img" name="img" accept="image/*"></input>
     </form>
-        <button className="btn btn-primary" type="submit">
-          Adicionar
+        <button className="btn btn-primary" type="submit" >
+          Salvar
         </button>
       </div>
       </form>

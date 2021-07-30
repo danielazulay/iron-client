@@ -29,11 +29,11 @@ function App() {
           <div className="container mt-3">
             <NaveBar />
             <Route component={RouterSearch} />
-            <Route path="/result-search/:name" component={ResultSearch} />
+            <Route path="/resultSearch/:name" component={ResultSearch} />
             <Route path="/signup" component={Signup} />
             <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
-            <Route path="/new-product" component={Product} />
+            <Route path="/newProduct" component={Product} />
             <Route path="/editUser/:id" component={EditeUser} />
           
             <Route exact path="/" component={AllProduct} />

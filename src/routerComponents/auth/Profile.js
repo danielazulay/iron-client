@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import TextProfile from "../../components/TextProfile";
 import api from "../../apis/api";
+<<<<<<< HEAD
 import { Link } from 'react-router-dom'
+=======
+import {Link} from "react-router-dom"
+>>>>>>> 357bf6397e4c8bfa03e574a1908f864c1e882221
 
 function Profile() {
   const [state, setState] = useState({
@@ -61,11 +65,10 @@ function Profile() {
       <TextProfile label="Estado" name={state.address.district} />
       <TextProfile label="Complemento" name={state.address.neighbourhood} />
       <TextProfile label="CEP" name={state.address.postalCode} />
-      
 
-      <Link type="button" to={`/editUser/${state._id}`}  className="btn btn-primary">Edit Profile</Link>
-
+      <Link  to={`/editUser/${state._id}`} >Edit Profile</Link>
     </div>
+
   );
 }
 

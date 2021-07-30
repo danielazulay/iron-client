@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import api from "../apis/api";
 import TextInput from "./TextInput";
 import FileBase64 from 'react-file-base64';
+import { useHistory } from "react-router-dom";
 
 function Product() {
+  const history = useHistory();
+
   const [state, setState] = useState({
     name: "",
     bestUse: "",
@@ -14,7 +17,7 @@ function Product() {
     alccol: "",
     img: "",
   });
-
+ 
   function handleChange(event) {
     setState({
       ...state,
@@ -28,6 +31,7 @@ function Product() {
     try {
       const response = await api.post("/newProduct", state);
       console.log(response);
+      history.push("/")
     } catch (err) {
       console.log(err.response);
     }
