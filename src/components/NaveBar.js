@@ -1,6 +1,6 @@
 import "./App.css";
 import {Link } from 'react-router-dom'
-import {NavLink} from 'react-router-dom'
+
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -15,7 +15,7 @@ function NaveBar() {
   const tokenKey = 'loggedInUser';
   const locationRoute = useLocation();
   const storage = localStorage.getItem(tokenKey);
-  const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
+  const { loggedInUser } = useContext(AuthContext);
   const [token, setToken] = useState(storage);
 
   useEffect(() => {

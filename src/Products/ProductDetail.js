@@ -15,7 +15,7 @@ function ProductDetails() {
     id:"",
     img: ""
   });
-  const { loggedInUser, logoff } = useContext(AuthContext);
+  const { loggedInUser} = useContext(AuthContext);
   const [quantity, setQuantity] = useState(0);
   const { id } = useParams();
   const { cart, setCart } = useContext(CartContext);
