@@ -8,8 +8,8 @@ function CardProducts(props) {
       <div className="row g-0">
         <div className="col-md-10">
           <img
-            src={props.img}
-            className="img-fluid rounded-start "
+            src={props.image}
+            className="img-fluid rounded-start"
             alt="Cerveja"
           />
         </div>

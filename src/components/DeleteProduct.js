@@ -17,9 +17,9 @@ function DeleteAccount() {
 
   async function handleDelete() {
     try {
-      const response  = await api.delete(`/deleteProduct/${id}`);
-      history.push('/profile')
-      
+     await api.delete(`/deleteProduct/${id}`);
+
+      history.push("/");
     } catch (err) {
       console.error(err.response.data);
     }

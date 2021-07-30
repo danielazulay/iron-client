@@ -19,8 +19,6 @@ import DeleteProduct from "./DeleteProduct"
 import Checkout from "./CheckOut"
 import EditeUser from "../routerComponents/account/EditeUser";
 
-
-
 function App() {
   return (
     <BrowserRouter>

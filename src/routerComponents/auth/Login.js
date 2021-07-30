@@ -41,7 +41,7 @@ function Login(props) {
   return (
     <div className="container mt-5">
       <form onSubmit={handleSubmit}>
-        <h1>Login</h1>
+        <h1>Cadastro</h1>
 
         <TextInput
           label="E-mail"
@@ -69,7 +69,7 @@ function Login(props) {
           </button>
         </div>
 
-        <Link className="pb-3" to="/auth/signup">
+        <Link className="pb-3" to="/signup">
           Ainda não é cadastrado? Clique aqui para se cadastrar!
         </Link>
       </form>

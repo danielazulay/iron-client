@@ -8,7 +8,7 @@ import TextInput from "./TextInput";
 function EditProduct(props) {
   const [state, setState] = useState({
     name: "",
-    validity: "",
+    bestUse: "",
     unity: "",
     description: "",
     category: "",
@@ -22,10 +22,16 @@ function EditProduct(props) {
   useEffect(() => {
     async function fetchProfile() {
       try {
-        const response = await api.get("/product");
+        const response = await api.get(`/productDetails/${id}`);
+
+
+const date = new Date(response.data.bestUse)
 
         setState({
           ...response.data,
+          bestUse: `${date.getFullYear()}-${String(
+            date.getMonth() + 1
+          ).padStart(2, "0")}-${String(date.getUTCDate()).padStart(2, "0")}`,
         });
       } catch (err) {
         console.error(err);
@@ -50,7 +56,7 @@ function EditProduct(props) {
         ...state,
         address: {
           name: "",
-          validity: "",
+          bestUse: "",
           unity: "",
           description: "",
           category: "",
@@ -64,11 +70,11 @@ function EditProduct(props) {
       setError(err.response.data);
     }
   }
-
+console.log(state)
   return (
     <form onSubmit={handleSubmit}>
       <TextInput
-        label="Name"
+        label="Nome"
         id="name"
         type="text"
         value={state.name}
@@ -78,16 +84,16 @@ function EditProduct(props) {
       />
 
       <TextInput
-        label="Validity"
+        label="Validade"
         id="text"
-        type="month"
-        value={state.validity}
+        type="date"
+        value={state.bestUse}
         onChange={handleChange}
-        name="validity"
+        name="bestUse"
         required
       />
       <TextInput
-        label="Unity"
+        label="Unidade"
         id="unity"
         type="number"
         value={state.unity}
@@ -96,7 +102,7 @@ function EditProduct(props) {
         required
       />
       <TextInput
-        label="Description"
+        label="Descrição"
         id="description"
         type="text"
         value={state.description}
@@ -105,7 +111,7 @@ function EditProduct(props) {
         required
       />
 <div>
-<label htmlFor="category">Category</label>
+<label htmlFor="category">Categoria</label>
       <div className="input-group mb-3">
         <select
          label="Category"
@@ -116,7 +122,7 @@ function EditProduct(props) {
           className="form-control"
           required
           >
-            <option>Select Category</option>
+            <option>Selecione a Categoria</option>
             <option value="leve">leve</option>
             <option value="Maltadas">Maltadas</option>
             <option value="Lupuladas">Lupuladas</option>
@@ -128,7 +134,7 @@ function EditProduct(props) {
       </div>
     </div>
 <div>
-      <label htmlFor="size">Size</label>
+      <label htmlFor="size">Tamanho</label>
       <div className="input-group mb-3">
         <select
          label="Size"
@@ -139,7 +145,7 @@ function EditProduct(props) {
           className="form-control"
           required
           >
-            <option>Select Size</option>
+            <option>Selecione o Tamanho</option>
             <option value="310">310</option>
             <option value="330">330</option>
             <option value="355">355</option>
@@ -149,7 +155,7 @@ function EditProduct(props) {
       </div>
     </div>
     <TextInput
-        label="Price"
+        label="Preço"
         id="price"
         type="number"
         value={state.price}
@@ -159,11 +165,11 @@ function EditProduct(props) {
       />
       <div className="form-group">
       <form action="/action_page.php">
-    <label for="img">Select image:</label>
+    <label htmlFor="img">Select image:</label>
     <input type="file" id="img" name="img" accept="image/*"></input>
     </form>
         <button className="btn btn-primary" type="submit">
-          Save
+          Adicionar
         </button>
       </div>
       </form>
