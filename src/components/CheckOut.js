@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 
 import { CartContext } from "../contexts/cartContext";
-import { AuthContext } from "../contexts/authContext";
+
 
 import api from "../apis/api";
 
@@ -13,7 +13,7 @@ const stripePromise = loadStripe(
 
 function Checkout() {
   const { cart } = useContext(CartContext);
-  const { loggedInUser } = useContext(AuthContext);
+  
 
   const [state, setState] = useState([]);
 
@@ -40,10 +40,10 @@ function Checkout() {
   async function handleSubmit() {
     try {
       const stripe = await stripePromise;
-      console.log("-->>>",cart)
+  
       const data = {
                products: cart.map((product) => {
-                 console.log(product)
+                 console.log(">>>>",product)
           return { productId: product.productId, qtt: product.qtt };
         }),
       };

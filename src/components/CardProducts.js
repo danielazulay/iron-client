@@ -4,11 +4,11 @@
 function CardProducts(props) {
   return (
 
-    <div className="card mb-3" style={{ maxWidth: "540px" }}>
+    <div id="beer"className="card mb-3" style={{ maxWidth: "540px" }}>
       <div className="row g-0">
         <div className="col-md-10">
           <img
-            src={props.image}
+            src={props.img}
             className="img-fluid rounded-start"
             alt="Cerveja"
           />

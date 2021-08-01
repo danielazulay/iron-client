@@ -1,10 +1,14 @@
 import "./App.css";
+import {Link } from 'react-router-dom'
 
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+
+
+
 
 function NaveBar() {
   const tokenKey = 'loggedInUser';
@@ -26,15 +30,17 @@ function NaveBar() {
       <Container>
         <Navbar.Brand href="/">Iron Beer</Navbar.Brand>
         <div className="d-flex justify-content-end ">
-          <Navbar.Brand href="/"  >  <i className="fas fa-shopping-cart"></i></Navbar.Brand>
+          <Link to="/checkout"><Navbar.Brand  >  <i className="fas fa-shopping-cart"></i></Navbar.Brand></Link>
         
           <NavDropdown align="end"  title={<i className="fas fa-bars" ></i>} id="navbarScrollingDropdown">
+
             { 
               !token && <NavDropdown.Item href="/login">Entrar</NavDropdown.Item>
             }
             { 
               !token && <NavDropdown.Item href="/signup">Cadastre-se</NavDropdown.Item>
             }
+            <NavDropdown.Item href="/">Todos os Produtos</NavDropdown.Item>
             { 
               token && <NavDropdown.Item href="/profile">Minha Conta</NavDropdown.Item>
             }
@@ -44,8 +50,9 @@ function NaveBar() {
             { 
               token && <button type="button" onClick={handlerLogout}>Sair</button>
             }
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
+           
+        {/*     <NavDropdown.Divider /> */}
+        {/*     <NavDropdown.Item href="#action5">About Us</NavDropdown.Item> */}
           </NavDropdown>
         </div>
       </Container>

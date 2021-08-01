@@ -32,7 +32,7 @@ function ProductDetails() {
     }
     fetchDetails();
   }, [id]);
-
+console.log(cart)
   return (
     <div>
       <CardProducts
