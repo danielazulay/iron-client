@@ -1,7 +1,7 @@
 import "../about.css";
 
 
-function Aboutus() {
+function About() {
 
   return (
     <div>
@@ -43,4 +43,4 @@ function Aboutus() {
   );
 }
 
-export default Aboutus;
+export default About;
