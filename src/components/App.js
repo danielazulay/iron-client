@@ -18,7 +18,7 @@ import EditProducts from "./EditProducts";
 import DeleteProduct from "./DeleteProduct"
 import Checkout from "./CheckOut"
 import EditeUser from "../routerComponents/account/EditeUser";
-import AboutUs from "./AboutUs";
+import Aboutus from "./Aboutus";
 
 function App() {
   return (
@@ -45,7 +45,7 @@ function App() {
             <Route path="/edit-product/:id" component={EditProducts} />
             <Route path="/delete-product/:id" component={DeleteProduct} />
             <Route path="/CheckOut" component={Checkout} />
-            <Route path="/AboutUs" component={AboutUs} />
+            <Route path="/Aboutus" component={Aboutus} />
           </div>
           </Switch>
           </CartContextComponent>

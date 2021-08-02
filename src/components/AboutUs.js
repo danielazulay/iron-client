@@ -1,7 +1,7 @@
 import "./AboutUs";
 
 
-function AboutUs() {
+function Aboutus() {
 
   return (
     <div>
@@ -43,4 +43,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default Aboutus;
