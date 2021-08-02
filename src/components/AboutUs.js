@@ -1,4 +1,4 @@
-import "./Aboutus";
+import "../about.css";
 
 
 function Aboutus() {
