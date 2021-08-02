@@ -1,4 +1,4 @@
-import "./AboutUs";
+import "./Aboutus";
 
 
 function Aboutus() {
