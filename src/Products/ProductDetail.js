@@ -61,28 +61,40 @@ console.log(cart)
           setCart([...cart, { qtt: quantity, productId: id }]);
         }}
       >
-        Add to the cart
+        Add 
       </button>
 
-      {state.userid[0] === loggedInUser.user._id ? (
-        <Link to={`/delete-product/${id}`}>
-          <i className="far fa-trash-alt"></i>
+   
+
+      
+      <Link
+          type="button"
+          to={`/`}
+          className="btn btn-secondary m-2"
+        >
+          Voltar
         </Link>
-      ) : (
-        <></>
-      )}
 
       {state.userid[0] === loggedInUser.user._id ? (
         <Link
           type="button"
           to={`/edit-product/${id}`}
-          className="btn btn-primary"
+       
         >
-          Edite Product
+          <i class="fas fa-edit"></i>
         </Link>
       ) : (
         <></>
       )}
+      {state.userid[0] === loggedInUser.user._id ? (
+        <Link to={`/delete-product/${id}`}>
+          <i className="far fa-trash-alt m-2"></i>
+        </Link>
+      ) : (
+        <></>
+      )}
+
+
     </div>
   );
 }

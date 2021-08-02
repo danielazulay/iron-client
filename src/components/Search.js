@@ -7,7 +7,7 @@ function Search(props) {
   return (
     <div>
       <nav className="navbar navbar-light bg-light mb-3">
-        <div className="container-fluid">
+        <div className="mx-auto">
           <form className="d-flex">
             <input
               className="form-control me-2"
@@ -26,7 +26,7 @@ function Search(props) {
                 history.push(`/resultSearch/${props.products.name}`);
               }}
             >
-             Pesquisar
+            <i class="fas fa-search"></i>
             </button>
           </form>
         </div>

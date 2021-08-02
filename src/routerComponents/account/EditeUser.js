@@ -191,11 +191,11 @@ function EditeUser(props) {
         onChange={handleChange}
         name="postalCode"
       />
-      <button type="submit" className="SaveBTN btn btn-primary">
+      <button type="submit" className="SaveBTN btn btn-secondary padding-bottom-2">
         Save
       </button>
 
-      <Link type="button" to="/" className="btn btn-primary">Cancel</Link>
+      <Link type="button" to="/" className="btn btn-secondary">Cancel</Link>
     </form>
 
     

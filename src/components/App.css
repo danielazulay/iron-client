@@ -47,3 +47,11 @@
 .SaveBTN{
 margin-right: 1rem;
 }
+
+.navbar-default {
+  background-color: #1ea2ca;
+  border-color: #09bef5;
+}
+.navbar-default .navbar-brand {
+  color: #8a0000;
+}

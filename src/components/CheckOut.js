@@ -26,8 +26,20 @@ function Checkout() {
         const response = await api.get(`/productDetails/${productInCart.productId}`);
 
         const { _id, img, price, name } = response.data;
+     
+        if(tempState.indexOf(_id)<0){
+    
+          tempState.push({ _id, img, price, name, qtt: productInCart.qtt });
 
-        tempState.push({ _id, img, price, name, qtt: productInCart.qtt });
+        }else {
+     
+        /*   const i = checkit(_id,tempState) */
+ /*     
+          tempState[i].qtt +=productInCart.qtt */
+        }
+        
+console.log(tempState)
+      
       }
 
       setState([...tempState]);
@@ -35,7 +47,10 @@ function Checkout() {
     fetchProducts();
   }, [cart]);
 
-  console.log(cart);
+    
+  
+  
+
 
   async function handleSubmit() {
     try {
@@ -43,11 +58,11 @@ function Checkout() {
   
       const data = {
                products: cart.map((product) => {
-                 console.log(">>>>",product)
+            
           return { productId: product.productId, qtt: product.qtt };
         }),
       };
-console.log(data)
+
       const response = await api.post("/create-checkout-session", data);
 
       localStorage.setItem("cart", JSON.stringify(cart));
@@ -67,6 +82,16 @@ console.log(data)
     }
   }
 
+  function handleDelet(event){
+
+    let novo=[]
+    novo= [...state]
+
+    novo.slice()
+
+    
+ 
+  }
   return (
     <div className="m-5">
       <h1 className="mb-2">Order Summary</h1>
@@ -78,13 +103,15 @@ console.log(data)
               to={`/productDetails/${product._id}`}
               className="list-group-item list-group-item-action"
             >
-              <div className="d-flex w-100 justify-content-between row">
+              <div className="d-flex w-100 justify-content-between row"
+               key={product._id}>
                 <div className="col-4">
                   <img
                     className="mw-100"
                     src={product.img}
                     alt={product.name}
                   />
+                  
                 </div>
 
                 <div className="col-8">
@@ -92,17 +119,19 @@ console.log(data)
                   <h3>
                     {product.price.toLocaleString(
                       window.navigator.languages[0],
-                      { style: "currency", currency: "USD" }
+                      { style: "currency", currency: "BRL" }
                     )}
                   </h3>
                   <small>Quantity: {product.qtt}</small>
+                  
                 </div>
+                <button type="button" onClick={handleDelet}> <i className="far fa-trash-alt "></i></button>
               </div>
             </Link>
           );
         })}
 
-        <button className="btn btn-primary btn-lg mt-3" onClick={handleSubmit}>
+        <button className="btn btn-primary btn-lg mt-3 m-2" onClick={handleSubmit}>
           Confirm Order
         </button>
       </div>
