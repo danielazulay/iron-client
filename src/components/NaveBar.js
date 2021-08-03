@@ -62,7 +62,7 @@ function NaveBar() {
               
            
            <NavDropdown.Divider /> 
-           <NavDropdown.Item href="/AboutUs">About Us</NavDropdown.Item> 
+           <NavDropdown.Item href="/About">About Us</NavDropdown.Item> 
         </NavDropdown> 
         <Navbar.Brand as={Link} to="/" >Iron Beer <i class="fas fa-beer"></i></Navbar.Brand>
         
