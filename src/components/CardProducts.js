@@ -21,7 +21,7 @@ function CardProducts(props) {
               <small className="text-muted">{props.size}</small>
             </p>
             <p className="card-text">
-              <small className="text-muted">Preço R${props.price}</small>
+              <small className="text-muted">Preço R$ {props.price}</small>
             </p>
           </div>
         </div>

@@ -43,6 +43,7 @@ console.log(cart)
         size={state.size}
         price={state.price}
         img={state.img}
+        category={state.category}
       />
       <div className="form-group d-inline-block mr-3">
         <label htmlFor="productDetailQuantity">Quantity: </label>
@@ -56,10 +57,13 @@ console.log(cart)
       </div>
       <button
         type="button"
-        className="btn btn-secondary"
-        onClick={() => {
-          setCart([...cart, { qtt: quantity, productId: id }]);
-        }}
+        className="btn btn-secondary m-1"
+        onClick={() => { if(quantity>0){
+          setCart([...cart, { qtt: quantity, productId: id }]
+          );
+        }else{window.alert("A quantidade tem que ser maior que 0")}
+        } }
+
       >
         Add 
       </button>
