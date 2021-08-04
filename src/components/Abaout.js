@@ -4,7 +4,7 @@ import "../about.css";
 function About() {
 
   return (
-    <div>
+    <div className="back">
       <h1>Ironhack Students</h1>
       <br/>
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import api from "../apis/api";
 import { useParams, Link } from "react-router-dom";
-import CardProducts from "../components/CardProducts";
+import CardDetails from "../components//CardDetails";
 import { CartContext } from "../contexts/cartContext";
 import { AuthContext } from "../contexts/authContext";
 
@@ -35,7 +35,7 @@ function ProductDetails() {
 console.log(cart)
   return (
     <div>
-      <CardProducts
+      <CardDetails
       id={state._id}
       image={state.img}
         name={state.name}

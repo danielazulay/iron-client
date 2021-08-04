@@ -19,7 +19,7 @@ import DeleteProduct from "./DeleteProduct"
 import Checkout from "./CheckOut"
 import EditeUser from "../routerComponents/account/EditeUser";
 import About from "./Abaout";
-
+import CardDetails from "./CardDetails"
 function App() {
   return (
     <BrowserRouter>
@@ -46,6 +46,8 @@ function App() {
             <Route path="/delete-product/:id" component={DeleteProduct} />
             <Route path="/CheckOut" component={Checkout} />
             <Route path="/About" component={About}/>
+            <Route path="/CardDetails" component={CardDetails}/>
+           
           </div>
           </Switch>
           </CartContextComponent>
