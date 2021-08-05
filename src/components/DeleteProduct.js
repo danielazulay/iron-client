@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -6,24 +6,33 @@ import Button from "react-bootstrap/Button";
 import api from "../apis/api";
 
 function DeleteAccount() {
-  const [show] = useState(true);
+ 
   const history = useHistory();
   const { id } = useParams();
+  const [show, setShow] = useState(true)
 
   function handleClose() {
-    
-    history.goBack();
+    setShow(false)
+    history.push("/");
   }
-
   async function handleDelete() {
     try {
-     await api.delete(`/deleteProduct/${id}`);
+     
+    
+      const response = await api.delete(`/deleteProduct/${id}`);
+    
+  
+     history.push("/");
+     
+    
 
-      history.push("/");
     } catch (err) {
       console.error(err.response.data);
     }
   }
+
+
+
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
