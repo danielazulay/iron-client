@@ -1,8 +1,8 @@
-import { useState ,useEffect} from "react";
+import { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-
+import AllProduct from "../Products/AllProducts"
 import api from "../apis/api";
 
 function DeleteAccount() {
@@ -13,23 +13,28 @@ function DeleteAccount() {
 
   function handleClose() {
     setShow(false)
-    history.push("/");
+    history.push("/"); 
+
   }
   async function handleDelete() {
     try {
      
-    
+      
       const response = await api.delete(`/deleteProduct/${id}`);
-    
-  
-     history.push("/");
+      history.push("/"); 
+      setShow(false)
      
+
+  
+
     
 
     } catch (err) {
       console.error(err.response.data);
     }
   }
+
+
 
 
 
