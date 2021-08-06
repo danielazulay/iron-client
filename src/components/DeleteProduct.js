@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import AllProduct from "../Products/AllProducts"
+
 import api from "../apis/api";
 
 function DeleteAccount() {
