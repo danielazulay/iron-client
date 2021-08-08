@@ -38,7 +38,7 @@ function OrderSuccess() {
     <div>
       <i
         style={{ fontSize: "70px" }}
-        class="bi bi-check-circle-fill text-success"
+        className="bi bi-check-circle-fill text-success"
       ></i>
 
       <h1>Order Confirmed!</h1>

@@ -26,7 +26,7 @@ function Search(props) {
                 history.push(`/resultSearch/${props.products.name}`);
               }}
             >
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
             </button>
           </form>
         </div>

@@ -85,7 +85,7 @@ console.log(cart)
           to={`/edit-product/${id}`}
        
         >
-          <i class="fas fa-edit"></i>
+          <i className="fas fa-edit"></i>
         </Link>
       ) : (
         <></>
