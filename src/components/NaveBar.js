@@ -1,13 +1,17 @@
 import "./App.css";
+import {Link } from 'react-router-dom'
+
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { useLocation, Link } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
-import { AuthContext } from "../contexts/authContext";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 function NaveBar() {
+  const history = useHistory();
   const tokenKey = 'loggedInUser';
   const { loggedInUser } = useContext(AuthContext);
   const locationRoute = useLocation();
@@ -22,39 +26,54 @@ function NaveBar() {
   const handlerLogout = () => {
     localStorage.removeItem(tokenKey);
     setToken('');
+    history.push('/')
+
   };
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
-      <Container>
-        <Navbar.Brand href="/">Iron Beer</Navbar.Brand>
-        <div className="d-flex justify-content-end ">
-          <Link to="/checkout"><Navbar.Brand  >  <i className="fas fa-shopping-cart"></i></Navbar.Brand></Link>
-        
-          <NavDropdown align="end"  title={<i className="fas fa-bars" ></i>} id="navbarScrollingDropdown">
 
-            { 
-              !token && <NavDropdown.Item href="/login">Entrar</NavDropdown.Item>
+
+   <Navbar collapseOnSelect expand="lg" bg="dark" variant="blue" >
+      <Container>
+      <NavDropdown align="start"  title="Menu" id="collasible-nav-dropdown" style={{ textDecoration:"none"}} >  
+           { 
+             !token &&     <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item> 
             }
             { 
-              !token && <NavDropdown.Item href="/signup">Cadastre-se</NavDropdown.Item>
+              !token && <NavDropdown.Item as={Link} to="/signup">Cadastre-se</NavDropdown.Item> 
             }
-            <NavDropdown.Item href="/">Todos os Produtos</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/">Todos os Produtos</NavDropdown.Item> 
             { 
-              token && <NavDropdown.Item href="/profile">Minha Conta</NavDropdown.Item>
-            }
-            { 
-              token && <NavDropdown.Item href="/newProduct">Novo Produto</NavDropdown.Item>
+              token &&  <NavDropdown.Item as={Link} to="/profile">Minha Conta</NavDropdown.Item> 
             }
             { 
-              token && <button type="button" onClick={handlerLogout}>Sair</button>
+              token && <NavDropdown.Item as={Link} to="/newProduct">Novo Produto</NavDropdown.Item> 
             }
+            
+            { 
+              token && <NavDropdown.Item > <button className="btn btn-outline-success my-2 my-sm-0" type="button"  onClick={handlerLogout}>
+      sair
+ 
+  </button>
+              
+             </NavDropdown.Item>
+            }
+      
+             
+            
+              
            
-        {/*     <NavDropdown.Divider /> */}
-        {/*     <NavDropdown.Item href="#action5">About Us</NavDropdown.Item> */}
-          </NavDropdown>
-        </div>
-      </Container>
-    </Navbar>
+           <NavDropdown.Divider /> 
+           <NavDropdown.Item as={Link} to="/About">About Us</NavDropdown.Item> 
+        </NavDropdown> 
+        <Navbar.Brand as={Link} to="/" >Iron Beer <i class="fas fa-beer"></i></Navbar.Brand>
+        
+        
+          
+        <div className="d-flex justify-content-end ">
+          <Link to="/checkout"><Navbar.Brand  >  <i className="fas fa-shopping-cart" ></i></Navbar.Brand></Link> 
+       </div>
+      </Container> 
+    </Navbar> 
   )
 }
 

@@ -1,0 +1,25 @@
+
+
+
+.back{
+    text-align: center;
+}
+.back,h5,h1{
+    color: rgb(97, 97, 138);
+}
+.back img{
+
+    width: 120px;
+    height: auto;
+    margin-left: 10px;
+align-self:center;
+}
+.back a{
+
+display: flex;
+justify-content:center;
+
+    margin: 2px;
+}
+
+

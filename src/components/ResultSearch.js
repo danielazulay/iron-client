@@ -34,7 +34,8 @@ function ResultSearch(props) {
           <CardProducts
           id={elem._id}
             name={elem.name}
-            size={elem.size}
+           
+            price={elem.price}
             description={elem.description}
             img={elem.img}
           />

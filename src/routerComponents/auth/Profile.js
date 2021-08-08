@@ -62,7 +62,7 @@ function Profile() {
       <TextProfile label="Complemento" name={state.address.neighbourhood} />
       <TextProfile label="CEP" name={state.address.postalCode} />
 
-      <Link  to={`/editUser/${state._id}`} >Edit Profile</Link>
+      <Link  to={`/editUser/${state._id}`} style={{textDecoration:"none"}}  >Edit Profile</Link>
     </div>
 
   );

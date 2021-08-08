@@ -9,6 +9,7 @@ function AllProduct() {
     async function fetchProduct() {
       try {
         const response = await api.get("/getAllProducts");
+      
 
         setState([...response.data]);
       } catch (err) {
@@ -26,7 +27,7 @@ function AllProduct() {
           <CardProducts
             id={elem._id}
             name={elem.name}
-     
+            size={state.size}
             img={elem.img}
             price={elem.price}
             description={elem.description}

@@ -2,7 +2,7 @@ function TextInput(props) {
   return (
     <div>
       <label htmlFor={props.id}>{props.label}</label>
-      <div className="input-group mb-3">
+      <div className="input-group mb-3 ">
         <input
           id={props.id}
           type={props.type}

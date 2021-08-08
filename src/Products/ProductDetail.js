@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import api from "../apis/api";
 import { useParams, Link } from "react-router-dom";
-import CardProducts from "../components/CardProducts";
+import CardDetails from "../components//CardDetails";
 import { CartContext } from "../contexts/cartContext";
 import { AuthContext } from "../contexts/authContext";
 
@@ -15,7 +15,7 @@ function ProductDetails() {
     id: "",
     img: "",
   });
-  const { loggedInUser } = useContext(AuthContext);
+  const { loggedInUser} = useContext(AuthContext);
   const [quantity, setQuantity] = useState(0);
   const { id } = useParams();
   const { cart, setCart } = useContext(CartContext);
@@ -35,14 +35,15 @@ function ProductDetails() {
 console.log(cart)
   return (
     <div>
-      <CardProducts
-        id={state._id}
-        image={state.img}
+      <CardDetails
+      id={state._id}
+      image={state.img}
         name={state.name}
         description={state.description}
         size={state.size}
         price={state.price}
         img={state.img}
+        category={state.category}
       />
       <div className="form-group d-inline-block mr-3">
         <label htmlFor="productDetailQuantity">Quantity: </label>
@@ -56,33 +57,48 @@ console.log(cart)
       </div>
       <button
         type="button"
-        className="btn btn-secondary"
-        onClick={() => {
-          setCart([...cart, { qtt: quantity, productId: id }]);
-        }}
+        className="btn btn-secondary m-1"
+        onClick={() => { if(quantity>0){
+          setCart([...cart, { qtt: quantity, productId: id }]
+          );
+        }else{window.alert("A quantidade tem que ser maior que 0")}
+        } }
+
       >
-        Add to the cart
+        Add 
       </button>
 
-      {state.userid[0] === loggedInUser.user._id ? (
-        <Link to={`/delete-product/${id}`}>
-          <i className="far fa-trash-alt"></i>
+   
+
+      
+      <Link
+          type="button"
+          to={`/`}
+          className="btn btn-secondary m-2"
+        >
+          Voltar
         </Link>
-      ) : (
-        <></>
-      )}
 
       {state.userid[0] === loggedInUser.user._id ? (
         <Link
           type="button"
           to={`/edit-product/${id}`}
-          className="btn btn-primary"
+       
         >
-          Edite Product
+          <i class="fas fa-edit"></i>
         </Link>
       ) : (
         <></>
       )}
+      {state.userid[0] === loggedInUser.user._id ? (
+        <Link to={`/delete-product/${id}`}>
+          <i className="far fa-trash-alt m-2"></i>
+        </Link>
+      ) : (
+        <></>
+      )}
+
+
     </div>
   );
 }

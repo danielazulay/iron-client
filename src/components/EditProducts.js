@@ -67,6 +67,7 @@ console.log(response)
   }
 
   return (
+    
     <form onSubmit={handleSubmit}>
       <TextInput
         label="Nome"
@@ -163,11 +164,20 @@ console.log(response)
     <label htmlFor="img">Select image:</label>
     <input type="file" id="img" name="img" accept="image/*"></input>
     </form>
-        <button className="btn btn-primary" type="submit" >
+        <button className="btn btn-secondary" type="submit" >
           Salvar
         </button>
+        
+        
+       
+      
+        
       </div>
+
       </form>
+
+            
+      
   );
 }
 

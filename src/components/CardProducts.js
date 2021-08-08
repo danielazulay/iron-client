@@ -4,9 +4,9 @@
 function CardProducts(props) {
   return (
 
-    <div id="beer"className="card mb-3" style={{ maxWidth: "540px" }}>
+    <div id="beer"className="card mb-3 m-2" >
       <div className="row g-0">
-        <div className="col-md-10">
+        <div className="col-md-2 d-flex justify-content-center">
           <img
             src={props.img}
             className="img-fluid rounded-start"
@@ -21,7 +21,7 @@ function CardProducts(props) {
               <small className="text-muted">{props.size}</small>
             </p>
             <p className="card-text">
-              <small className="text-muted">{props.price}</small>
+              <small className="text-muted">Preço R$ {props.price}</small>
             </p>
           </div>
         </div>
