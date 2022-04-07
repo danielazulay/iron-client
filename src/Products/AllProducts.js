@@ -9,8 +9,6 @@ function AllProduct() {
     async function fetchProduct() {
       try {
         const response = await api.get("/getAllProducts");
-      
-
         setState([...response.data]);
       } catch (err) {
         console.log(err);
